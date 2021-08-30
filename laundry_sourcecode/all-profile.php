@@ -1,0 +1,68 @@
+<?php include('head.php');
+      include('header.php');
+      include('sidebar.php');
+      include('connect.php');
+
+      if(isset($_POST["btn_update"]))
+{
+  extract($_POST);
+
+  $target_dir = "uploadImage/Profile/";
+  $image1 = basename($_FILES["image"]["name"]);
+  if($_FILES["image"]["tmp_name"]!=''){
+    $image = $target_dir . basename($_FILES["image"]["name"]);
+   if (move_uploaded_file($_FILES["image"]["tmp_name"], $image)) {
+    
+       @unlink("uploadImage/Profile/".$_POST['old_image']);
+    
+    } else {
+        echo "Sorry, there was an error uploading your file.";
+    }
+  
+  }
+  else {
+     $image1 =$_POST['old_image'];
+  }
+  
+   $q1="UPDATE `admin` SET `fname`='$fname',`lname`='$lname',`email`='$email',`contact`='$contact',`dob`='$dob',`gender`='$gender',`image`='$image1' where id = '".$_SESSION["id"]."'";
+  //$query1=$conn->query($q1);
+
+    if ($conn->query($q1) === TRUE) {
+   
+      $_SESSION['success']='Record Successfully Updated';
+      ?>
+      <script type="text/javascript">
+        window.location = "profile.php";
+      </script>
+      <?php
+
+} else {
+   
+      $_SESSION['error']='Something Went Wrong';
+}
+
+
+  ?>
+  <script>
+  //window.location = "sms_config.php";
+  </script>
+  <?php
+}
+
+?>
+<?php
+$que="select * from  admin where id = '".$_SESSION["id"]."'";
+$query=$conn->query($que);
+while($row=mysqli_fetch_array($query))
+{
+  //print_r($row);
+  extract($row);
+  $fname = $row['fname'];
+  $lname = $row['lname'];
+  $email = $row['email'];
+  $contact = $row['contact'];
+  $dob1 = $row['dob'];
+  $gender = $row['gender'];
+}
+
+?>
