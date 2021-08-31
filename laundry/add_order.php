@@ -18,11 +18,11 @@
   <!-- Bread crumb -->
   <div class="row page-titles">
   <div class="col-md-5 align-self-center">
-  <h3 class="text-primary">order Details</h3> </div>
+  <h3 class="text-primary">Order Details</h3> </div>
   <div class="col-md-7 align-self-center">
   <ol class="breadcrumb">
   <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-  <li class="breadcrumb-item active">order Management</li>
+  <li class="breadcrumb-item active">Order Management</li>
   </ol>
   </div>
   </div>
@@ -46,7 +46,7 @@
 
   <div class="form-group">
   <div class="row">
-  <label class="col-sm-3 control-label">customer  Name</label>
+  <label class="col-sm-3 control-label">Customer  Name</label>
   <div class="col-sm-9">
   <textarea class="form-control"  name="fname" placeholder="Name" style="height: 70%;"></textarea>
   <!-- <select name="fname" id="event" class="form-control" required="">
@@ -100,7 +100,7 @@ PHP, Laravel and Codeignitor Developer -->
   <div class="row">
   <label class="col-sm-3 control-label">Description</label>
   <div class="col-sm-8">
-  <textarea class="form-control" rows="4" name="discription" placeholder="Discription" style="height: 80px;"></textarea>
+  <textarea class="form-control" rows="4" name="discription" placeholder="Description" style="height: 80px;"></textarea>
   </div>
   </div>
   </div>

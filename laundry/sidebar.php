@@ -29,10 +29,10 @@
 
 
 
-                    <!-- <?php //if($_SESSION["username"]=='admin') 
+                    <?php //if($_SESSION["username"]=='admin') 
          //{ ?>
-                         <li> <a class="has-arrow" href="view_customer.php" aria-expanded="false"><i class="fa fa-address-book"></i><span class="hide-menu">Customer Management</span></a>
-                            <ul aria-expanded="false" class="collapse">
+                         <!-- <li> <a class="has-arrow" href="view_customer.php" aria-expanded="false"><i class="fa fa-address-book"></i><span class="hide-menu">Customer Management</span></a> -->
+                           <!--- <ul aria-expanded="false" class="collapse">
                                 <li><a href="add_customer.php">Add Customer</a></li>
                                <li><a href="view_customer.php">View Customer</a></li>
                             </ul> -->
@@ -43,7 +43,7 @@
 
      <?php if($_SESSION["username"]=='admin') 
          { ?>
-                         <li> <a class="has-arrow" href="view_order.php" aria-expanded="false"><i class="fa fa-inr"></i><span class="hide-menu">Order Management</span></a>
+                         <li> <a class="has-arrow" href="view_order.php" aria-expanded="false"><i class="fa fa-inr"></i><span class="hide-menu">Transaction</span></a>
                             <!-- <ul aria-expanded="false" class="collapse">
                                 <li><a href="add_order.php">Add order</a></li>
                                <li><a href="view_order.php">Manage order</a></li>
@@ -52,6 +52,15 @@
                     <?php }?>
 
 
+                    <?php //if($_SESSION["username"]=='admin') 
+                        //{ ?>
+                         <!-- <li> <a class="has-arrow" href="pending_order.php" aria-expanded="false"><i class="fa fa-address-book"></i><span class="hide-menu">Customer Management</span></a> -->
+                             <!-- <ul aria-expanded="false" class="collapse">
+                                <li><a href="add_customer.php">Add Customer</a></li>
+                               <li><a href="view_customer.php">View Customer</a></li>
+                            </ul> -->
+                        </li>
+                    <?php //}?>
 
 
              
@@ -59,9 +68,9 @@
 
 <?php if($_SESSION["username"]=='admin') 
          { ?>
-                         <li> <a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-table"></i><span class="hide-menu">Reports</span></a>
+                         <li> <a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-table"></i><span class="hide-menu">Status</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="today_delivery.php">Today's Delivery Report</a></li>
+                                <li><a href="today_delivery.php">Today's Delivery</a></li>
                                <li><a href="pending_order.php">Pending Orders</a></li>
                             </ul>
                         </li>
@@ -105,7 +114,7 @@
                              <li><a href="view_role.php">User Permission</a></li>
                                
                             </ul>
-                        </li> 
+                        </li>  
                     <?php } ?>
 
                     <?php if($_SESSION["username"]=='admin') { ?>
