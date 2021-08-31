@@ -17,7 +17,7 @@
                    
 <?php if(isset($useroles)){  if(in_array("manage_user",$useroles)){ ?> 
 <li class="nav-label">Owner</li>
-<li> <a class="has-arrow" href="view_user.php" aria-expanded="false"><i class="fa fa-user-plus"></i><span class="hide-menu">User Management</span></a>
+<!-- <li> <a class="has-arrow" href="view_user.php" aria-expanded="false"><i class="fa fa-user-plus"></i><span class="hide-menu">User Management</span></a> -->
 <!-- <ul aria-expanded="false" class="collapse"> -->
 <!-- <?php //if(isset($useroles)){  if(in_array("add_user",$useroles)){ ?>  -->
 <!-- <li><a href="add_user.php">Add User</a></li> -->
@@ -29,15 +29,15 @@
 
 
 
-                    <?php if($_SESSION["username"]=='admin') 
-         { ?>
+                    <!-- <?php //if($_SESSION["username"]=='admin') 
+         //{ ?>
                          <li> <a class="has-arrow" href="view_customer.php" aria-expanded="false"><i class="fa fa-address-book"></i><span class="hide-menu">Customer Management</span></a>
-                            <!-- <ul aria-expanded="false" class="collapse">
+                            <ul aria-expanded="false" class="collapse">
                                 <li><a href="add_customer.php">Add Customer</a></li>
                                <li><a href="view_customer.php">View Customer</a></li>
                             </ul> -->
                         </li>
-                    <?php }?>
+                    <?php //}?>
 
 
 
@@ -82,15 +82,15 @@
         
 
 
- <?php if($_SESSION["username"]=='admin') { ?>
-                         <li> <a class="has-arrow" href="view_role.php" aria-expanded="false"><i class="fa fa-shield"></i><span class="hide-menu">User Permissions</span></a>
-                            <!-- <ul aria-expanded="false" class="collapse">
+ <!-- <?php //if($_SESSION["username"]=='admin') { ?>
+                          <li> <a class="has-arrow" href="view_role.php" aria-expanded="false"><i class="fa fa-shield"></i><span class="hide-menu">User Permissions</span></a>
+                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="assign_role.php">Assign Role</a></li>
                                <li><a href="view_role.php">View Role</a></li>
                             </ul> -->
-                        </li>
+                        <!-- </li>  -->
 
-<?php }?>
+<?php //}?> 
          
 
 
@@ -99,7 +99,10 @@
                                <?php //if($_SESSION["username"]=='user' || $_SESSION["username"]=='admin') { ?>
                                <!-- <li><a href="manage_website.php">Appearance Management</a></li> -->
                              <?php //} ?>
-                              <li><a href="email_config.php">Email Management</a></li>
+                             <li><a href="profile.php">Profile Setting</a></li>
+                             <li><a href="email_config.php">Email Management</a></li>
+                             <li><a href="view_user.php">User Management</a></li>
+                             <li><a href="view_role.php">User Permission</a></li>
                                
                             </ul>
                         </li> 
