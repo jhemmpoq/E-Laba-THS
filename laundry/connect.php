@@ -4,7 +4,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "laundry_db1";
+$dbname = "e_laundry";
 
 
 

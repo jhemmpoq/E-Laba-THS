@@ -1,10 +1,9 @@
-  <?php include('head.php');?>
-
-  <?php include('header.php');?>
-  <?php include('sidebar.php');?>
-
+  <?php //include('head.php');?>
+  <?php //include('header.php');?>
+  <?php //include('sidebar.php');?>
+  <?php include('all-head.php'); ?>
   <?php
-  include('connect.php');
+  //include('connect.php');
   date_default_timezone_set('Asia/Kolkata');
   $current_date = date('Y-m-d');
 
@@ -49,19 +48,20 @@
   <div class="row">
   <label class="col-sm-3 control-label">customer  Name</label>
   <div class="col-sm-9">
-  <select name="fname" id="event" class="form-control" required="">
+  <textarea class="form-control"  name="fname" placeholder="Name" style="height: 70%;"></textarea>
+  <!-- <select name="fname" id="event" class="form-control" required="">
 
 
 
   <option value=" ">--Select customer--</option>
   <?php  
-  $sql2 = "SELECT * FROM customer where id!=1";
-  $result2 = $conn->query($sql2); 
-  while($row2= mysqli_fetch_array($result2)){
+  //$sql2 = "SELECT * FROM customer where id!=1";
+  //$result2 = $conn->query($sql2); 
+  //while($row2= mysqli_fetch_array($result2)){
   ?>
-  <option value ="<?php echo $row2['id'];?>"><?php echo $row2['fname'].' '.$row2['lname'];?> </option>
-  <?php } ?>
-  </select>
+  <option value ="<?php //echo $row2['id'];?>"><?php // echo $row2['fname'].' '.$row2['lname'];?> </option>
+  <?php //} ?>
+  </select> -->
 
 
 
@@ -98,7 +98,7 @@
 PHP, Laravel and Codeignitor Developer -->
   <div class="form-group">
   <div class="row">
-  <label class="col-sm-3 control-label">Discription</label>
+  <label class="col-sm-3 control-label">Description</label>
   <div class="col-sm-8">
   <textarea class="form-control" rows="4" name="discription" placeholder="Discription" style="height: 80px;"></textarea>
   </div>

@@ -1,11 +1,11 @@
 
-<?php include('head.php');?>
-
-<?php include('header.php');?>
-<?php include('sidebar.php');?>
+<?php //include('head.php');?>
+<?php //include('header.php');?>
+<?php //include('sidebar.php');?>
+<?php include('all-head.php'); ?>
 
  <?php
- include('connect.php');
+ //include('connect.php');
  date_default_timezone_set('Asia/Kolkata');
  $current_date = date('Y-m-d');
 
