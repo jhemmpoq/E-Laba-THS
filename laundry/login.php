@@ -19,13 +19,13 @@ function createSalt()
 $salt = createSalt();
 $pass = hash('sha256', $salt . $passw);
 //echo $pass;
- $sql = "SELECT * FROM admin WHERE email='" .$unm . "' and password = '". $pass."'";
-    $result = mysqli_query($conn,$sql);
+ $sql = "SELECT * FROM admins WHERE email='" .$unm . "' and password = '". $pass."'";
+    $result =pg_query($sql);
     
-     $count=mysqli_num_rows($result);
+     $count=pg_num_rows($result);
      if($count==1) {
     {    
-      $row  = mysqli_fetch_array($result);
+      $row  =pg_fetch_array($result);
     //print_r($row);
      $_SESSION["id"] = $row['id'];
      $_SESSION["username"] = $row['username'];
@@ -83,8 +83,8 @@ else {?>
         <div class="unix-login">
              <?php
              $sql_login = "select * from manage_website"; 
-             $result_login = $conn->query($sql_login);
-             $row_login = mysqli_fetch_array($result_login);
+             $result_login = pg_query($sql_login);
+             $row_login =pg_fetch_array($result_login);
              ?>
             <div class="container-fluid" style="background-image: url('uploadImage/Logo/<?php echo $row_login['background_login_image'];?>');
  background-color: #cccccc;">

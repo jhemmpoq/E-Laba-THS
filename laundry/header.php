@@ -21,9 +21,9 @@
                     <a class="navbar-brand" href="index.php">
                         <!-- Logo icon -->
                          <?php
-             $sql_header_logo = "select * from manage_website"; 
-             $result_header_logo = $conn->query($sql_header_logo);
-             $row_header_logo = mysqli_fetch_array($result_header_logo);
+             $sql_header_logo = "SELECT * FROM manage_website"; 
+             $result_header_logo = pg_query($sql_header_logo);
+             $row_header_logo = pg_fetch_array($result_header_logo);
              ?>
                         <b><img src="uploadImage/Logo/<?php echo $row_header_logo['logo'];?>" alt="homepage" class="dark-logo" style="width:100%;height:auto;"/></b>
                         <!--End Logo icon -->
@@ -73,9 +73,9 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <?php 
-                                $sql = "select * from admin where id = '".$_SESSION["id"]."'";
-                                $query=$conn->query($sql);
-                                while($row=mysqli_fetch_array($query))
+                                $sql = "SELECT * FROM admins WHERE id = '".$_SESSION["id"]."'";
+                                $query=pg_query($sql);
+                                while($row=pg_fetch_array($query))
                                     {
                                       //print_r($row);
                                       extract($row);

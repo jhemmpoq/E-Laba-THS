@@ -1,14 +1,14 @@
 <!-- footer -->
              <?php
              include('connect.php');
-             $sql_footer = "select * from manage_website"; 
-             $result_footer = $conn->query($sql_footer);
-             $row_footer = mysqli_fetch_array($result_footer);
+             $sql_footer = "SELECT * FROM manage_website"; 
+             $result_footer = pg_query($sql_footer);
+             $row_footer = pg_fetch_array($result_footer);
              ?>
              <?php //echo $row_footer['footer'];?>
             <footer class="footer"> © 2020 All rights reserved. Software Developed by <a href="https://nikhilbhalerao.com"><?php echo $row_footer['footer'];?></a></footer> 
             <!-- End footer -->
-        </div>
+        </div>  
         <!-- End Page wrapper  -->  
     </div>
     <!-- End Wrapper -->

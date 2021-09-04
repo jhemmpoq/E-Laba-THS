@@ -29,7 +29,7 @@
 
 
 
-                    <?php //if($_SESSION["username"]=='admin') 
+                    <?php //if($_SESSION["username"]=='admins') 
          //{ ?>
                          <!-- <li> <a class="has-arrow" href="view_customer.php" aria-expanded="false"><i class="fa fa-address-book"></i><span class="hide-menu">Customer Management</span></a> -->
                            <!--- <ul aria-expanded="false" class="collapse">
@@ -41,7 +41,7 @@
 
 
 
-     <?php if($_SESSION["username"]=='admin') 
+     <?php if($_SESSION["username"]=='admins') 
          { ?>
                          <li> <a class="has-arrow" href="view_order.php" aria-expanded="false"><i class="fa fa-inr"></i><span class="hide-menu">Transaction</span></a>
                             <!-- <ul aria-expanded="false" class="collapse">
@@ -52,7 +52,7 @@
                     <?php }?>
 
 
-                    <?php //if($_SESSION["username"]=='admin') 
+                    <?php //if($_SESSION["username"]=='admins') 
                         //{ ?>
                          <!-- <li> <a class="has-arrow" href="pending_order.php" aria-expanded="false"><i class="fa fa-address-book"></i><span class="hide-menu">Customer Management</span></a> -->
                              <!-- <ul aria-expanded="false" class="collapse">
@@ -66,7 +66,7 @@
              
 
 
-<?php if($_SESSION["username"]=='admin') 
+<?php if($_SESSION["username"]=='admins') 
          { ?>
                          <li> <a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-table"></i><span class="hide-menu">Status</span></a>
                             <ul aria-expanded="false" class="collapse">
@@ -80,7 +80,7 @@
 
 
 
-                    <?php if($_SESSION["username"]=='admin') { ?>
+                    <?php if($_SESSION["username"]=='admins') { ?>
                          <li> <a class="has-arrow" href="view_services.php" aria-expanded="false"><i class="fa fa-bandcamp"></i><span class="hide-menu">Services</span></a>
                             <!-- <ul aria-expanded="false" class="collapse">
                                 <li><a href="add_services.php">Add Servises </a></li>
@@ -91,7 +91,7 @@
         
 
 
- <!-- <?php //if($_SESSION["username"]=='admin') { ?>
+ <!-- <?php //if($_SESSION["username"]=='admins') { ?>
                           <li> <a class="has-arrow" href="view_role.php" aria-expanded="false"><i class="fa fa-shield"></i><span class="hide-menu">User Permissions</span></a>
                              <ul aria-expanded="false" class="collapse">
                                 <li><a href="assign_role.php">Assign Role</a></li>
@@ -105,7 +105,7 @@
 
                     <li> <a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-cog"></i><span class="hide-menu">Setting</span></a>
                             <ul aria-expanded="false" class="collapse">
-                               <?php //if($_SESSION["username"]=='user' || $_SESSION["username"]=='admin') { ?>
+                               <?php //if($_SESSION["username"]=='user' || $_SESSION["username"]=='admins') { ?>
                                <!-- <li><a href="manage_website.php">Appearance Management</a></li> -->
                              <?php //} ?>
                              <li><a href="profile.php">Profile Setting</a></li>
@@ -117,7 +117,7 @@
                         </li>  
                     <?php } ?>
 
-                    <?php if($_SESSION["username"]=='admin') { ?>
+                    <?php if($_SESSION["username"]=='admins') { ?>
                          <li> <a target="_blank" href="https://www.nikhilbhalerao.com/blog" aria-expanded="false"><i class="fa fa-info-circle"></i><span class="hide-menu">Know more !</span></a>
                             
                         </li>

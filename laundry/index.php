@@ -3,9 +3,9 @@
  date_default_timezone_set('Asia/Kolkata');
  $current_date = date('Y-m-d');
 
- $sql_currency = "select * from manage_website"; 
-             $result_currency = $conn->query($sql_currency);
-             $row_currency = mysqli_fetch_array($result_currency);
+ $sql_currency = "SELECT * FROM manage_website"; 
+             $result_currency = pg_query($sql_currency);
+             $row_currency = pg_fetch_array($result_currency);
 ?>    
         <!-- Page wrapper  -->
         <div class="page-wrapper">
@@ -42,9 +42,9 @@
                                 <div class="media-body media-text-right">
                                   <?php 
 
-                        $sql= "select * from `order` where `todays_date`= '".date('Y-m-d')."'";
-                    $res=$conn->query($sql);
-              $num_rows = mysqli_num_rows($res);
+                        $sql= "SELECT * FROM orders WHERE todays_date= '".date('Y-m-d')."'";
+                    $res=pg_query($sql);
+              $num_rows = pg_num_rows($res);
             ?>
 
                                   
@@ -76,9 +76,9 @@
                                 <div class="media-body media-text-right">
                                     
                                     <?php 
-                        $sql= "select * from `order` where `delivery_status`='0'";
-                    $res=$conn->query($sql);
-              $num_rows = mysqli_num_rows($res);
+                        $sql= "SELECT * FROM orders WHERE delivery_status ='0'";
+                    $res=pg_query($sql);
+              $num_rows = pg_num_rows($res);
             ?>
 
                                   
@@ -109,9 +109,9 @@
                                 </div>
                                 <div class="media-body media-text-right">
                                     <?php 
-                        $sql= "select * from `order` where `delivery_status`='1' ";
-                    $res=$conn->query($sql);
-              $num_rows = mysqli_num_rows($res);
+                        $sql= "SELECT * FROM orders WHERE delivery_status='1' ";
+                    $res=pg_query($sql);
+              $num_rows = pg_num_rows($res);
             ?>
 
                                   
@@ -161,20 +161,19 @@
 <tbody>
 <?php 
 include 'connect.php';
-$sql = "SELECT * FROM `order`";
-$result = $conn->query($sql);
+$sql = "SELECT * FROM orders";
+$result = pg_query($sql);
 
-while($row = $result->fetch_assoc())
+while($row = pg_fetch_assoc($result))
 
 {
-$sql1 = "SELECT * FROM `service` where id='".$row['sname']."'" ;
-$result1 = $conn->query($sql1);
-$row1 = $result1->fetch_assoc();
+$sql1 = "SELECT * FROM services where id='".$row['sname']."'" ;
+$result1 = pg_query($sql1);
+$row1 = pg_fetch_assoc($result1);
 
-$sql2 = "SELECT * FROM `customer` where 
-id='".$row['fname']."'";
-$result2 = $conn->query($sql2);
-$row2 = $result2->fetch_assoc();
+$sql2 = "SELECT * FROM customer WHERE id='".$row['fname']."'";
+$result2 = pg_query($sql2);
+$row2 = pg_fetch_assoc($result2);
 ?>
 <tr>
 <td><?php echo $row['id']; ?></td>
