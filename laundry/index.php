@@ -183,7 +183,7 @@ $row2 = pg_fetch_assoc($result2);
 
 <td><?php echo $row['discription']; ?></td>
 <td><?php echo $row['prizes']; ?></td>
-<td><?php echo $row['delivery date']; ?></td>
+<td><?php echo $row['delivery_date']; ?></td>
 <td><?php echo $row['todays_date']; ?></td>
 <?php if ($row['delivery_status']==0) {
 ?>

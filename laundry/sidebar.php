@@ -1,6 +1,6 @@
  <?php 
  include('connect.php');
- include ('sidebar-con.php');
+ include('sidebar-con.php');
  ?>
 
  <!-- Left Sidebar  -->
@@ -41,7 +41,7 @@
 
 
 
-     <?php if($_SESSION["username"]=='admins') 
+     <?php if($_SESSION["username"]=='admin') 
          { ?>
                          <li> <a class="has-arrow" href="view_order.php" aria-expanded="false"><i class="fa fa-inr"></i><span class="hide-menu">Transaction</span></a>
                             <!-- <ul aria-expanded="false" class="collapse">
@@ -66,7 +66,7 @@
              
 
 
-<?php if($_SESSION["username"]=='admins') 
+<?php if($_SESSION["username"]=='admin') 
          { ?>
                          <li> <a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-table"></i><span class="hide-menu">Status</span></a>
                             <ul aria-expanded="false" class="collapse">
@@ -80,7 +80,7 @@
 
 
 
-                    <?php if($_SESSION["username"]=='admins') { ?>
+                    <?php if($_SESSION["username"]=='admin') { ?>
                          <li> <a class="has-arrow" href="view_services.php" aria-expanded="false"><i class="fa fa-bandcamp"></i><span class="hide-menu">Services</span></a>
                             <!-- <ul aria-expanded="false" class="collapse">
                                 <li><a href="add_services.php">Add Servises </a></li>
@@ -91,7 +91,7 @@
         
 
 
- <!-- <?php //if($_SESSION["username"]=='admins') { ?>
+ <!-- <?php //if($_SESSION["username"]=='admin') { ?>
                           <li> <a class="has-arrow" href="view_role.php" aria-expanded="false"><i class="fa fa-shield"></i><span class="hide-menu">User Permissions</span></a>
                              <ul aria-expanded="false" class="collapse">
                                 <li><a href="assign_role.php">Assign Role</a></li>
@@ -117,7 +117,7 @@
                         </li>  
                     <?php } ?>
 
-                    <?php if($_SESSION["username"]=='admins') { ?>
+                    <?php if($_SESSION["username"]=='admin') { ?>
                          <li> <a target="_blank" href="https://www.nikhilbhalerao.com/blog" aria-expanded="false"><i class="fa fa-info-circle"></i><span class="hide-menu">Know more !</span></a>
                             
                         </li>

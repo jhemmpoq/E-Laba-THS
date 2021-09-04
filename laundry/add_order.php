@@ -1,9 +1,5 @@
-  <?php //include('head.php');?>
-  <?php //include('header.php');?>
-  <?php //include('sidebar.php');?>
-  <?php include('all-head.php'); ?>
-  <?php
-  //include('connect.php');
+
+  <?php include('all-head.php');
   date_default_timezone_set('Asia/Kolkata');
   $current_date = date('Y-m-d');
 
@@ -83,9 +79,9 @@
 
   <option value=" ">--Select service--</option>
   <?php  
-  $sql2 = "SELECT * FROM service where id!=1";
-  $result2 = $conn->query($sql2); 
-  while($row2= mysqli_fetch_array($result2)){
+  $sql2 = "SELECT * FROM services where id!=1";
+  $result2 = pg_query($sql2); 
+  while($row2= pg_fetch_array($result2)){
   ?>
   <option value ="<?php echo $row2['id'].','.$row2['prize'];?>"><?php echo $row2['sname'];?> </option>
   <?php } ?>

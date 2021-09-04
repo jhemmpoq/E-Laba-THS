@@ -1,6 +1,4 @@
-<?php include('head.php');?>
-<?php include('header.php');?>
-<?php include('sidebar.php');
+<?php include('all-head.php');
 
 if(isset($_GET['id']))
 { ?>
@@ -66,21 +64,20 @@ Sure
 </thead>
 <tbody>
 <?php 
-include 'connect.php';
-$sql = "SELECT * FROM `order`";
-$result = $conn->query($sql);
+$sql = "SELECT * FROM orders";
+$result = pg_query($sql);
 
-while($row = $result->fetch_assoc())
+while($row = pg_fetch_assoc($result))
 
 {
-$sql1 = "SELECT * FROM `service` where id='".$row['sname']."'" ;
-$result1 = $conn->query($sql1);
-$row1 = $result1->fetch_assoc();
+$sql1 = "SELECT * FROM services where id='".$row['sname']."'" ;
+$result1 = pg_query($sql1);
+$row1 = pg_fetch_assoc($result1);
 
-$sql2 = "SELECT * FROM `customer` where 
+$sql2 = "SELECT * FROM customer where 
 id='".$row['fname']."'";
-$result2 = $conn->query($sql2);
-$row2 = $result2->fetch_assoc();
+$result2 = pg_query($sql2);
+$row2 = pg_fetch_assoc($result2);
 ?>
 <tr>
 <td><?php echo $row['id']; ?></td>
@@ -90,7 +87,7 @@ $row2 = $result2->fetch_assoc();
 
 <td><?php echo $row['discription']; ?></td>
 <td><?php echo $row['prizes']; ?></td>
-<td><?php echo $row['delivery date']; ?></td>
+<td><?php echo $row['delivery_date']; ?></td>
 <td><?php echo $row['todays_date']; ?></td>
 <?php if ($row['delivery_status']==0) {
 ?>
