@@ -26,19 +26,19 @@ extract($_POST);
 $sname=$_POST['sname'];
 $exp=explode(',', $sname);
 
-   $sql="INSERT INTO `order`(`fname`, `sname`, `discription`, `prizes`, `delivery date`,`todays_date`) VALUES ('$fname','".$exp[0]."','$discription','".$exp[1]."','$dod',
-   '$todays_date')";
- if ($conn->query($sql) === TRUE) {
+   $sql="INSERT INTO orders(fname, sname, discription, prizes, delivery_date,todays_date) 
+   VALUES ($fname, $exp[0], $discription, $prizes, $dod, $todays_date)";
+ if (pg_query($sql) === TRUE) {
       $_SESSION['success']=' Record Successfully Added';
      ?>
 <script type="text/javascript">
-window.location="../view_order.php";
+window.location="../transaction.php";
 </script>
 <?php
 } else {
       $_SESSION['error']='Something Went Wrong';
 ?>
 <script type="text/javascript">
-window.location="../view_order.php";
+//window.location="../transaction.php";
 </script>
 <?php } ?>
