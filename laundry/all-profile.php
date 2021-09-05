@@ -24,10 +24,10 @@
      $image1 =$_POST['old_image'];
   }
   
-   $q1="UPDATE `admin` SET `fname`='$fname',`lname`='$lname',`email`='$email',`contact`='$contact',`dob`='$dob',`gender`='$gender',`image`='$image1' where id = '".$_SESSION["id"]."'";
-  //$query1=$conn->query($q1);
+   $q1="UPDATE admins SET fname=$fname, lname=$lname, email=$email, contact=$contact, dob=$dob, gender=$gender, image=$image1 WHERE id = '".$_SESSION["id"]."'";
+  //$query1= pg_query($q1);
 
-    if ($conn->query($q1) === TRUE) {
+    if (pg_query($q1) === TRUE) {
    
       $_SESSION['success']='Record Successfully Updated';
       ?>
@@ -51,9 +51,9 @@
 
 ?>
 <?php
-$que="select * from  admin where id = '".$_SESSION["id"]."'";
-$query=$conn->query($que);
-while($row=mysqli_fetch_array($query))
+$que="SELECT * FROM  admins where id = '".$_SESSION["id"]."'";
+$query=pg_query($que);
+while($row=pg_fetch_array($query))
 {
   //print_r($row);
   extract($row);

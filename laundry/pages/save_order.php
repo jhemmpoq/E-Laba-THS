@@ -26,8 +26,13 @@ extract($_POST);
 $sname=$_POST['sname'];
 $exp=explode(',', $sname);
 
+<<<<<<< HEAD
    $sql="INSERT INTO orders(fname, sname, discription, prizes, delivery_date,todays_date) 
    VALUES ($fname, $exp[0], $discription, $prizes, $dod, $todays_date)";
+=======
+   $sql= "INSERT INTO orders (fname, sname, discription, prizes, delivery_date, todays_date) 
+          VALUES ($fname, $exp[0], $discription, $prizes, $dod, $todays_date)";
+>>>>>>> 69717657887f4716c8d2aa7d3339d91cdbb952bc
  if (pg_query($sql) === TRUE) {
       $_SESSION['success']=' Record Successfully Added';
      ?>
@@ -39,6 +44,10 @@ window.location="../transaction.php";
       $_SESSION['error']='Something Went Wrong';
 ?>
 <script type="text/javascript">
+<<<<<<< HEAD
 //window.location="../transaction.php";
+=======
+// window.location="../view_order.php";
+>>>>>>> 69717657887f4716c8d2aa7d3339d91cdbb952bc
 </script>
 <?php } ?>

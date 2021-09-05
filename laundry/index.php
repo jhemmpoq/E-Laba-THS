@@ -140,27 +140,21 @@
 <div class="col-md-5 align-self-center">
                     <h3 class="text-primary">Orders Status</h3> </div>
 <div class="table-responsive m-t-40">
-<table id="myTable" class="table table-bordered table-striped">
-<thead>
-<tr>
-<th>id</th>
-<th>customer Name</th>
-<!-- <th>Last Name</th> -->
-<th>service name</th>
-<th>Disciption</th>
-<th>PRIZE</th>
-<th>Dilivery Date</th>
-<th>pickup date</th>
-<th>status</th>
-
-<!-- <th>discription</th>  
-<th>Pick up date</th>
-<th>Dilivery date</th> -->
-</tr>
-</thead>
-<tbody>
+    <table id="myTable" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Customer Name</th>
+                <th>Service Name</th>
+                <th>Desciption</th>
+                <th>Price</th>
+                <th>Delivery Date</th>
+                <th>Pickup Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+    <tbody>
 <?php 
-include 'connect.php';
 $sql = "SELECT * FROM orders";
 $result = pg_query($sql);
 
@@ -178,7 +172,7 @@ $row2 = pg_fetch_assoc($result2);
 <tr>
 <td><?php echo $row['id']; ?></td>
 <td><?php echo $row2['fname']; ?></td>
-<!-- <td><?php echo $row['lname']; ?></td> -->
+<?php echo $row['lname']; ?>
 <td><?php echo isset($row1['sname']) ? $row1['sname'] : "N/A"; ?></td>
 
 <td><?php echo $row['discription']; ?></td>
@@ -204,7 +198,7 @@ else{
 
 
 
-<!-- <a href="assign_role.php?id=<?=$row['id'];?>"><button type="button" class="btn btn-xs btn-danger" ><i class="fa fa-pay"></i></button></a> -->
+<a href="assign_role.php?id=<?=$row['id'];?>"><button type="button" class="btn btn-xs btn-danger" ><i class="fa fa-pay"></i></button></a>
 </td>
 </tr>
 <?php } ?>

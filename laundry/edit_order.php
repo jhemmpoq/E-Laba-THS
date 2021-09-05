@@ -50,7 +50,7 @@ window.location="transaction.php";
 <?php
 } else 
 {
-$_SESSION['error']='Something Went Wrong';
+$_SESSION['error']='Something Wen t Wrong';
 ?>
 <script type="text/javascript">
 window.location="transaction.php";

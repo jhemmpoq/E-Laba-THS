@@ -2,7 +2,7 @@
 include('connect.php');
                                       
                 
-              $sql="SELECT * FROM `order` WHERE `todays_date`=CURDATE()";
-              $res=$conn->query($sql);
-              $num_rows = mysqli_num_rows($res);
+              $sql="SELECT * FROM order WHERE todays_date=CURDATE()";
+              $res=pg_query($sql);
+              $num_rows = pg_num_rows($res);
          ?>
