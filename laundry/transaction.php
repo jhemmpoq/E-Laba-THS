@@ -24,11 +24,11 @@ Sure
 <!-- Bread crumb -->
 <div class="row page-titles">
 <div class="col-md-5 align-self-center">
-<h3 class="text-primary"> View order</h3> </div>
+<h3 class="text-primary"> Transaction </h3> </div>
 <div class="col-md-7 align-self-center">
 <ol class="breadcrumb">
 <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-<li class="breadcrumb-item active">View order</li>
+<li class="breadcrumb-item active">Transaction</li>
 </ol>
 </div>
 </div>
@@ -49,42 +49,42 @@ Sure
 <tr>
 <th>ID</th>
 <th>Customer Name</th>
-<!-- <th>Last Name</th> -->
 <th>Service name</th>
 <th>Desciption</th>
 <th>Price</th>
 <th>Delivery Date</th>
+<th>Pickup Date</th>
 <th>Status</th>
+<th>Action</th>
 </tr>
 </thead>
 <tbody>
 <?php 
-include 'connect.php';
-$sql ="SELECT * FROM orders WHERE delivery_date=CURRENT_DATE";
-
+$sql = "SELECT * FROM orders";
 $result = pg_query($sql);
 
 while($row = pg_fetch_assoc($result))
 
 {
-$sql1 = "SELECT * FROM services where id='".$row['sname']."'";
+$sql1 = "SELECT * FROM services where id='".$row['sname']."'" ;
 $result1 = pg_query($sql1);
-$row1 = pg_fetch_assoc();
+$row1 = pg_fetch_assoc($result1);
 
 $sql2 = "SELECT * FROM customer where 
 id='".$row['fname']."'";
 $result2 = pg_query($sql2);
-$row2 = pg_fetch_assoc();
+$row2 = pg_fetch_assoc($result2);
 ?>
 <tr>
 <td><?php echo $row['id']; ?></td>
 <td><?php echo $row2['fname']; ?></td>
 <!-- <td><?php echo $row['lname']; ?></td> -->
-<td><?php echo $row1['sname']; ?></td>
+<td><?php echo isset($row1['sname']) ? $row1['sname'] : 'N/A'; ?></td>
 
 <td><?php echo $row['discription']; ?></td>
 <td><?php echo $row['prizes']; ?></td>
-<td><?php echo $row['delivery date']; ?></td>
+<td><?php echo $row['delivery_date']; ?></td>
+<td><?php echo $row['todays_date']; ?></td>
 <?php if ($row['delivery_status']==0) {
 ?>
 <td>pending</td>
@@ -94,16 +94,25 @@ else{
 ?>
 <td>completed</td>
 <?php }?>
+<td>
 <?php if ($row['delivery_status']==0) {
 ?>
 
-
+<a href="complete_order.php?id=<?=$row['id'];?>"><button type="button" class="btn btn-xs btn-danger" ><i class="fa fa-exchange"></i></button></a>
 <?php }?>
 
+
+
+
+<?php if(isset($useroles)){  if(in_array("edit_order",$useroles)){ ?> 
+<a href="edit_order.php?id=<?=$row['id'];?>"><button type="button" class="btn btn-xs btn-primary" ><i class="fa fa-pencil"></i></button></a>
+<?php } } ?>
+
+<?php if(isset($useroles)){  if(in_array("delete_order",$useroles)){ ?> 
+<a href="view_order.php?id=<?=$row['id'];?>"><button type="button" class="btn btn-xs btn-danger" ><i class="fa fa-trash"></i></button></a>
+<?php } } ?>
+<!-- <a href="assign_role.php?id=<?=$row['id'];?>"><button type="button" class="btn btn-xs btn-danger" ><i class="fa fa-pay"></i></button></a> -->
 </td>
-
-
-
 </tr>
 <?php } ?>
 </tbody>
@@ -133,6 +142,8 @@ Success
 </div>
 <?php unset($_SESSION["success"]);  
 } ?>
+
+
 <?php if(!empty($_SESSION['error'])) {  ?>
 <div class="popup popup--icon -error js_error-popup popup--visible">
 <div class="popup__background"></div>

@@ -85,7 +85,7 @@
                                       $contact = $row['contact'];
                                       $dob1 = $row['dob'];
                                       $gender = $row['gender'];
-                                      $image = $row['image'];
+                                      $image = $row['images'];
                                     }
                                                                     ?>
                                 <img src="uploadImage/Profile/<?=$image?>" alt="user" class="profile-pic" /></a>
