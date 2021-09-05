@@ -24,11 +24,11 @@ Sure
 <!-- Bread crumb -->
 <div class="row page-titles">
 <div class="col-md-5 align-self-center">
-<h3 class="text-primary"> View order</h3> </div>
+<h3 class="text-primary"> Transaction </h3> </div>
 <div class="col-md-7 align-self-center">
 <ol class="breadcrumb">
 <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-<li class="breadcrumb-item active">View order</li>
+<li class="breadcrumb-item active">Transaction</li>
 </ol>
 </div>
 </div>
@@ -47,19 +47,15 @@ Sure
 <table id="myTable" class="table table-bordered table-striped">
 <thead>
 <tr>
-<th>id</th>
-<th>customer Name</th>
-<!-- <th>Last Name</th> -->
-<th>service name</th>
-<th>Disciption</th>
-<th>PRIZE</th>
-<th>Dilivery Date</th>
-<th>pickup date</th>
-<th>status</th>
+<th>ID</th>
+<th>Customer Name</th>
+<th>Service name</th>
+<th>Desciption</th>
+<th>Price</th>
+<th>Delivery Date</th>
+<th>Pickup Date</th>
+<th>Status</th>
 <th>Action</th>
-<!-- <th>discription</th>  
-<th>Pick up date</th>
-<th>Dilivery date</th> -->
 </tr>
 </thead>
 <tbody>
@@ -146,6 +142,8 @@ Success
 </div>
 <?php unset($_SESSION["success"]);  
 } ?>
+
+
 <?php if(!empty($_SESSION['error'])) {  ?>
 <div class="popup popup--icon -error js_error-popup popup--visible">
 <div class="popup__background"></div>

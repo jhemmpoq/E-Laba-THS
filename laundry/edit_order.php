@@ -1,8 +1,6 @@
 <?php 
 /*echo "string"; exit;*/
-include('head.php');?>
-<?php include('header.php');?>
-<?php include('sidebar.php');?>
+include('all-head.php');?>
 
 <?php
 include('connect.php');
@@ -28,33 +26,34 @@ extract($_POST);
 $sname=$_POST['sname'];
 $exp=explode(',', $sname);
 
-/*$q1="UPDATE `order` SET `id`='$id',`fname`='$fname',`sname`='$sname',`discription`='$discription',`prizes`='".$exp[0]."',`delivery date`='$dod' WHERE `id`='".$_GET['id']."'";
+/*$q1="UPDATE order SET id='$id',fname='$fname',sname='$sname',discription='$discription',`prizes`='".$exp[0]."',`delivery date`='$dod' WHERE `id`='".$_GET['id']."'";
 */
 
 
 
-$q1= "UPDATE `order` SET `fname`='$fname',`sname`='".$exp[0]."',`discription`='$discription',`prizes`='".$exp[1]."',`delivery date`='$dod' WHERE `id`='".$_GET['id']."'";
+$q1= "UPDATE orders SET fname=$fname, sname=$exp[0], discription=$discription, prizes=$exp[1], delivery_date=$dod 
+      WHERE id=".$_GET['id']."'";
 
 
-//$q2=$conn->query($q1);
+//$q2=pg_query($q1);
 
 
 
 
-if ($conn->query($q1) === TRUE) 
+if (pg_query($q1) === TRUE) 
 {
 $_SESSION['success']=' Record Successfully Updated';
 ?>
 <script type="text/javascript">
-window.location="view_order.php";
+window.location="transaction.php";
 </script>
 <?php
 } else 
 {
-$_SESSION['error']='Something Went Wrong';
+$_SESSION['error']='Something Wen t Wrong';
 ?>
 <script type="text/javascript">
-window.location="view_order.php";
+window.location="transaction.php";
 </script>
 <?php
 }
@@ -64,10 +63,10 @@ window.location="view_order.php";
 
 
 <?php
-$que="SELECT * FROM `order` WHERE id='".$_GET["id"]."'";
+$que="SELECT * FROM orders WHERE id='".$_GET["id"]."'";
 
-$query=$conn->query($que);
-while($row=mysqli_fetch_array($query))
+$query=pg_query($que);
+while($row=pg_fetch_array($query))
 {
 //print_r($row);
 extract($row);
@@ -77,7 +76,7 @@ $sname = $row['sname'];
 $discription= $row['discription'];
 
 $prizes = $row['prizes'];
-$dod = $row['delivery date'];
+$dod = $row['delivery_date'];
 
 }
 
@@ -133,8 +132,8 @@ $dod = $row['delivery date'];
   <option value=" ">--Select customer--</option>
   <?php  
   $sql2 = "SELECT * FROM customer where id!=1";
-  $result2 = $conn->query($sql2); 
-  while($row2= mysqli_fetch_array($result2)){
+  $result2 = pg_query($sql2); 
+  while($row2= pg_fetch_array($result2)){
   ?>
   <option value ="<?php echo $row2['id'];?>" <?php if($row2['id']==$fname){ echo "selected"; }?>><?php echo $row2['fname'].' '.$row2['lname'];?> </option>
   <?php } ?>
@@ -162,8 +161,8 @@ $dod = $row['delivery date'];
   <option value=" ">--Select service--</option>
   <?php  
   $sql2 = "SELECT * FROM service where id!=1";
-  $result2 = $conn->query($sql2); 
-  while($row2= mysqli_fetch_array($result2)){
+  $result2 = pg_query($sql2); 
+  while($row2= pg_fetch_array($result2)){
   ?>
   <option value ="<?php echo $row2['id'].','.$row2['prize'];?>" <?php if($row2['id']==$sname){ echo "selected"; }?>> <?php echo $row2['sname'];?> </option>
   <?php } ?>

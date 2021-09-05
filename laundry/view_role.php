@@ -1,8 +1,5 @@
 
-<?php include('head.php');?>
-<?php include('header.php');?>
-<?php include('sidebar.php');?>
-
+<?php include('all-head.php'); ?>
 
 
   <!-- Page wrapper  -->
@@ -39,10 +36,10 @@
                                         <tbody>
                                           <?php 
                                           include 'connect.php';
-                                          $sql = "SELECT * FROM tbl_group where name != 'admin'";
-                                           $result = $conn->query($sql);
+                                          $sql = "SELECT * FROM tbl_group WHERE name != 'admin'";
+                                           $result = pg_query($sql);
                                             $i=1;
-                                           while($row = $result->fetch_assoc()) { ?>
+                                           while($row = pg_fetch_assoc($result)) { ?>
                                             <tr>
                                                 <td><?php echo $i; ?></td>
                                                 <td><?php echo $row['name']; ?></td>

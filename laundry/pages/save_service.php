@@ -22,11 +22,12 @@ $salt = createSalt();
       $msg = "Failed to upload image";
     }*/
 extract($_POST);
+$sname=$_POST['sname'];
 
-  $sql="INSERT INTO `service`(`sname`, `prize`) VALUES ('$sname','$prize')";
+  $sql="INSERT INTO services (sname, prize) VALUES ($sname, $prize)";
 
 
- if ($conn->query($sql) === TRUE)
+ if (pg_query($sql) === TRUE)
   {
       $_SESSION['success']=' Record Successfully Added';
      ?>
@@ -39,6 +40,6 @@ window.location="../view_services.php";
       $_SESSION['error']='Something Went Wrong';
 ?>
 <script type="text/javascript">
-window.location="../view_services.php";
+//window.location="../view_services.php";
 </script>
 <?php } ?>

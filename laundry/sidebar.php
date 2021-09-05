@@ -43,7 +43,7 @@
 
      <?php if($_SESSION["username"]=='admin') 
          { ?>
-                         <li> <a class="has-arrow" href="view_order.php" aria-expanded="false"><i class="fa fa-inr"></i><span class="hide-menu">Transaction</span></a>
+                         <li> <a class="has-arrow" href="transaction.php" aria-expanded="false"><i class="fa fa-inr"></i><span class="hide-menu">Transaction</span></a>
                             <!-- <ul aria-expanded="false" class="collapse">
                                 <li><a href="add_order.php">Add order</a></li>
                                <li><a href="view_order.php">Manage order</a></li>

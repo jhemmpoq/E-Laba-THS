@@ -1,7 +1,5 @@
 
-<?php include('head.php');?>
-<?php include('header.php');?>
-<?php include('sidebar.php');
+<?php include('all-head.php');
 
 if(isset($_GET['id']))
 { ?>
@@ -62,13 +60,13 @@ if(isset($_GET['id']))
                                         <tbody>
                                     <?php 
                                     include 'connect.php';
-                                    $sql = "SELECT * FROM admin where username ='user'";
-                                     $result = $conn->query($sql);
+                                    $sql = "SELECT * FROM admins WHERE username ='user'";
+                                     $result = pg_query($sql);
 
-                                   while($row = $result->fetch_assoc()) { 
+                                   while($row = pg_fetch_assoc($result)) { 
                                    $sql1 = "SELECT * FROM  tbl_group where id  ='".$row['group_id']."'";
-                                   $result1 = $conn->query($sql1);
-                                  $row1 = $result1->fetch_assoc();
+                                   $result1 = pg_query($sql1);
+                                  $row1 = pg_fetch_assoc($result1);
                                       ?>
                                             <tr>
                                                 <td><?php echo $row['fname']; ?></td>
