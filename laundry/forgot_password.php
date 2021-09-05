@@ -8,9 +8,9 @@ if(isset($_POST['btn_forgot']))
 $otp = substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 8)), 0, 8);
  $text_email=$_POST['email'];
 
-$sql = "SELECT * FROM admin where email ='".$text_email."' " ;
-$ans = $conn->query($sql);
-$res=mysqli_fetch_array($ans);
+$sql = "SELECT * FROM admins WHERE email ='".$text_email."' " ;
+$ans = pg_query($sql);
+$res=pg_fetch_array($ans);
    $realemail=$res['email'];
   $person_fname=$res['fname'];  
   $person_lname=$res['lname'];
@@ -31,14 +31,14 @@ $salt = createSalt();
 $otp_pass =  hash('sha256', $salt . $otp1);     
   
 if($text_email == $realemail){
-$sql = "UPDATE admin SET password ='$otp_pass' WHERE email='$text_email'";
-$ans1 = $conn->query($sql);
+$sql = "UPDATE admins SET password =$otp_pass WHERE email=$text_email";
+$ans1 = pg_query($sql);
  
 
 
-$s = "select * from tbl_email_config";
-$r = $conn->query($s);
-$rr = mysqli_fetch_array($r);
+$s = "SELECT * FROM tbl_email_config";
+$r = pg_query($s);
+$rr = pg_fetch_array($r);
 
 $mail_host = $rr['mail_driver_host'];
 $mail_name = $rr['name'];

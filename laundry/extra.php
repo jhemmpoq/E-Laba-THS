@@ -6,8 +6,8 @@
    <option value=" ">--Select Group--</option>
                 <?php  
         $sql2 = "SELECT * FROM tbl_group where id!=1";
-      $result2 = $conn->query($sql2); 
-           while($row2= mysqli_fetch_array($result2)){
+      $result2 = pg_query($sql2); 
+           while($row2= pg_fetch_array($result2)){
                         ?>
  <option value ="<?php echo $row2['id'];?>"><?php echo $row2['name'];?> </option>
                       <?php } ?>

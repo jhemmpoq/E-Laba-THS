@@ -3,7 +3,7 @@ include 'connect.php';
 session_start();
 
 $sql = "DELETE FROM `order` WHERE id='".$_GET["id"]."'";
-$res = $conn->query($sql) ;
+$res = pg_query($sql) ;
  $_SESSION['success']=' Record Successfully Deleted';
 ?>
 <script>

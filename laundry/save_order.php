@@ -21,8 +21,8 @@ $pass = hash('sha256', $salt . $passw);
       $msg = "Failed to upload image";
     }*/
 extract($_POST);
-  sql="INSERT INTO `customer`(`id`, `fname`, `lname`, `contact`, `address`, `discription`, `pd`, `dd`) VALUES ('$fname','$lname','$contact','$address','$discription','$pd','$dd')";
- if ($conn->query($sql) === TRUE) {
+  sql="INSERT INTO customer (id, fname, lname, contact, address, discription, pd, dd) VALUES ($fname,$lname,$contact,$address,$discription,$pd,$dd)";
+ if (pg_query($sql) === TRUE) {
       $_SESSION['success']=' Record Successfully Added';
      ?>
 <script type="text/javascript">

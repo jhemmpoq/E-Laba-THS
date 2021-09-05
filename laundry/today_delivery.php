@@ -60,18 +60,13 @@ Sure
 <tbody>
 <?php 
 include 'connect.php';
-<<<<<<< HEAD
 $sql ="SELECT * FROM orders WHERE delivery_date=CURRENT_DATE";
-=======
-$sql ="SELECT * FROM orders WHERE delivery_date = CURRENT_DATE";
->>>>>>> 69717657887f4716c8d2aa7d3339d91cdbb952bc
 
 $result = pg_query($sql);
 
 while($row = pg_fetch_assoc($result))
 
 {
-<<<<<<< HEAD
 $sql1 = "SELECT * FROM services where id='".$row['sname']."'";
 $result1 = pg_query($sql1);
 $row1 = pg_fetch_assoc();
@@ -80,16 +75,6 @@ $sql2 = "SELECT * FROM customer where
 id='".$row['fname']."'";
 $result2 = pg_query($sql2);
 $row2 = pg_fetch_assoc();
-=======
-$sql1 = "SELECT * FROM `service` where id='".$row['sname']."'";
-$result1 = pg_query($sql1);
-$row1 = pg_fetch_assoc($result1);
-
-$sql2 = "SELECT * FROM customer WHERE 
-id='".$row['fname']."'";
-$result2 =pg_query($sql2);
-$row2 = pg_fetch_assoc($result2);
->>>>>>> 69717657887f4716c8d2aa7d3339d91cdbb952bc
 ?>
 <tr>
 <td><?php echo $row['id']; ?></td>

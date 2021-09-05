@@ -1,9 +1,4 @@
-<?php include('head.php');?>
-<?php include('header.php');?>
-
-<?php include('sidebar.php');?>   
-<?php //echo  $_SESSION["email"];
-include('connect.php');
+<?php include('all-head.php');
 date_default_timezone_set('Asia/Kolkata');
 $current_date = date('Y-m-d');
 
@@ -12,10 +7,10 @@ if(isset($_POST["btn_submit"]))
 {
 extract($_POST);
 $sql = "delete  from tbl_permission_role where role_id='".$_GET['id']."'";
-$query=$conn->query($sql);
+$query=pg_query($sql);
 
-$sql_update = "UPDATE tbl_group set name='$assign_name',description='$description' where id='".$_GET['id']."'";
-$query_update=$conn->query($sql_update); 
+$sql_update = "UPDATE tbl_group SET name=$assign_name, description=$description WHERE id='".$_GET['id']."'";
+$query_update=pg_query($sql_update); 
 
 $checkItem = $_POST["checkItem"];
 //print_r($_POST);
@@ -23,8 +18,8 @@ $a = count($checkItem);
 for($i=0;$i<$a;$i++){
 $id = $_GET['id'];
 
-$sql="insert into tbl_permission_role(permission_id,role_id)values('$checkItem[$i]','$id')";
-$qq = $conn->query($sql);
+$sql="INSERT INTO tbl_permission_role(permission_id,role_id) VALUES('$checkItem[$i]','$id')";
+$qq = pg_query($sql);
 
 }
 
@@ -58,8 +53,8 @@ window.location="view_role.php";
 
 <?php 
 $q1 ="SELECT * FROM  tbl_group where id = '".$_GET['id']."'";
-$result1 =$conn->query($q1);
-while($row1 = mysqli_fetch_array($result1)){  
+$result1 =pg_query($q1);
+while($row1 = pg_fetch_array($result1)){  
 $name =  $row1['name'];
 $description =  $row1['description'];
 // $id = $row["id"]; 
@@ -86,8 +81,8 @@ $description =  $row1['description'];
 
 <?php 
 $q ="SELECT * FROM  tbl_permission ";
-$result =$conn->query($q);
-while($row = mysqli_fetch_array($result)){  
+$result =pg_query($q);
+while($row = pg_fetch_array($result)){  
 
 $id = $row["id"]; 
 ?>
@@ -97,8 +92,8 @@ $id = $row["id"];
 <?php 
 
 $s = "select * from tbl_permission_role where role_id='".$_GET['id']."' AND permission_id='$id'" ;
-$r =$conn->query($s);
-$row1 = mysqli_fetch_array($r);
+$r =pg_query($s);
+$row1 = pg_fetch_array($r);
 
 if(isset($row1['permission_id']) && $id == $row1['permission_id']){
 echo "checked";

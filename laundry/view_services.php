@@ -47,10 +47,10 @@ if(isset($_GET['id']))
    <table id="myTable" class="table table-bordered table-striped">
                   <thead>
                     <tr>
-         <th>id</th>
-            <th>service name</th>
-                    <th>PRIZE</th>
-                    <th>ACTION</th>
+         <th>ID</th>
+            <th>Service Name</th>
+                    <th>Price</th>
+                    <th>Action</th>
                     
                 <!--  <th>service name</th>
               <th>Disciption</th>

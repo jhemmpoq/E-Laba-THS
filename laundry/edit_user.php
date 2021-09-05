@@ -1,11 +1,6 @@
 
-<?php include('head.php');?>
+<?php include('all-head.php');
 
-<?php include('header.php');?>
-<?php include('sidebar.php');?>
-
- <?php
- include('connect.php');
  date_default_timezone_set('Asia/Kolkata');
  $current_date = date('Y-m-d');
 
@@ -22,9 +17,10 @@ if(isset($_POST["btn_update"]))
       $msg = "Failed to upload image";
     }
    
-      $q1="UPDATE `admin` SET `fname`='$fname',`lname`='$lname',`email`='$email',`address`='$address',`gender`='$gender',`contact`='$contact',`dob`='$dob' ,`image`='$image' WHERE `id`='".$_GET['id']."'";
-    //$q2=$conn->query($q1);
-    if ($conn->query($q1) === TRUE) {
+      $q1="UPDATE admin SET fname=$fname, lname=$lname, email=$email, address=$address, gender=$gender, contact=$contact, dob=$dob , image=$image 
+      WHERE id='".$_GET['id']."'";
+
+    if (pg_query($q1) === TRUE) {
       $_SESSION['success']=' Record Successfully Updated';
      ?>
 <script type="text/javascript">
@@ -45,8 +41,8 @@ window.location="view_user.php";
 
 <?php
 $que="select * from admin where id='".$_GET["id"]."'";
-$query=$conn->query($que);
-while($row=mysqli_fetch_array($query))
+$query=pg_query($que);
+while($row=pg_fetch_array($query))
 {
     //print_r($row);
     extract($row);
@@ -71,11 +67,11 @@ $image = $row['image'];
             <!-- Bread crumb -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-primary">User Management</h3> </div>
+                    <h3 class="text-primary">Edit User</h3> </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                        <li class="breadcrumb-item active">Add User Management</li>
+                        <li class="breadcrumb-item active">Edit User</li>
                     </ol>
                 </div>
             </div>

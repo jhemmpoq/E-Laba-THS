@@ -1,9 +1,5 @@
 
-<?php include('head.php');?>
-<?php include('header.php');?>
-<?php include('sidebar.php');?>
-
- <?php
+<?php include('all-head.php');
  include('zmyconnect.php');
 if(isset($_POST["btn_sms"]))
 {
@@ -11,8 +7,8 @@ if(isset($_POST["btn_sms"]))
  
 
   
-   $q1="UPDATE `tbl_sms_config` SET `senderid`='$sender_id',`sms_username`='$sms_username',`sms_password`='$sms_password',`auth_key`='$auth_key'";
-     $q2=$conn->query($q1);
+   $q1="UPDATE tbl_sms_config SET senderid=$sender_id, sms_username=$sms_username, sms_password=$sms_password, auth_key=$auth_key";
+     $q2=pg_query($q1);
   ?>
   <script>
   window.location = "sms_config.php";
@@ -23,9 +19,9 @@ if(isset($_POST["btn_sms"]))
 ?>
 
 <?php
-$que="select * from tbl_sms_config";
-$query=$conn->query($que);
-while($row=mysqli_fetch_array($query))
+$que="SELECT * FROM tbl_sms_config";
+$query=pg_query($que);
+while($row=pg_fetch_array($query))
 {
   //print_r($row);
   extract($row);

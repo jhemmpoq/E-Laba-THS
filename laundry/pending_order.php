@@ -28,7 +28,7 @@ Sure
 <div class="col-md-7 align-self-center">
 <ol class="breadcrumb">
 <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-<li class="breadcrumb-item active">View order order</li>
+<li class="breadcrumb-item active">View Pending Order</li>
 </ol>
 </div>
 </div>
@@ -47,18 +47,14 @@ Sure
 <table id="myTable" class="table table-bordered table-striped">
 <thead>
 <tr>
-<th>id</th>
-<th>customer Name</th>
-<!-- <th>Last Name</th> -->
-<th>service name</th>
-<th>Disciption</th>
-<th>PRIZE</th>
-<th>Dilivery Date</th>
-<th>status</th>
+<th>ID</th>
+<th>Customer Name</th>
+<th>Service name</th>
+<th>Desciption</th>
+<th>Price</th>
+<th>Delivery Date</th>
+<th>Status</th>
 <th>Action</th>
-<!-- <th>discription</th>  
-<th>Pick up date</th>
-<th>Dilivery date</th> -->
 </tr>
 </thead>
 <tbody>
@@ -74,8 +70,7 @@ $sql1 = "SELECT * FROM services where id='".$row['sname']."'";
 $result1 = pg_query($sql1);
 $row1 = pg_fetch_assoc($result1);
 
-$sql2 = "SELECT * FROM customer where 
-id='".$row['fname']."'";
+$sql2 = "SELECT * FROM customer where id='".$row['fname']."'";
 $result2 = pg_query($sql2);
 $row2 = pg_fetch_assoc($result2);
 ?>

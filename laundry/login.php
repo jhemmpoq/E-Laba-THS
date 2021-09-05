@@ -33,7 +33,7 @@ $pass = hash('sha256', $salt . $passw);
      $_SESSION["email"] = $row['email'];
      $_SESSION["fname"] = $row['fname'];
      $_SESSION["lname"] = $row['lname'];
-     $_SESSION["image"] = $row['image'];   
+     $_SESSION["image"] = $row['images'];   
         ?>
          <div class="popup popup--icon -success js_success-popup popup--visible">
   <div class="popup__background"></div>

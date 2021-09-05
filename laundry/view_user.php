@@ -60,7 +60,7 @@ if(isset($_GET['id']))
                                         <tbody>
                                     <?php 
                                     include 'connect.php';
-                                    $sql = "SELECT * FROM admins WHERE username ='user'";
+                                    $sql = "SELECT * FROM admins WHERE username =user";
                                      $result = pg_query($sql);
 
                                    while($row = pg_fetch_assoc($result)) { 

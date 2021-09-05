@@ -1,10 +1,5 @@
 
-<?php include('head.php');?>
-<?php include('header.php');?>
-<?php include('sidebar.php');?>
-
- <?php
- include('connect.php');
+<?php include('all-head.php');
 if(isset($_POST["btn_web"]))
 {
   extract($_POST);
@@ -72,8 +67,8 @@ if(isset($_POST["btn_web"]))
      $background_login_image =$_POST['old_back_login_image'];
   }
   
-   $q1="UPDATE `manage_website` SET `title`='$title',`short_title`='$short_title',`logo`='$website_logo',`footer`='$footer' ,`currency_code`= '$currency_code',`currency_symbol`= '$currency_symbol',`login_logo`='$login_logo',`invoice_logo`='$invoice_logo' , `background_login_image` = '$background_login_image'";
-  if ($conn->query($q1) === TRUE) {
+   $q1="UPDATE manage_website SET title=$title, short_title=$short_title, logo=$website_logo, footer=$footer, currency_code= $currency_code, currency_symbol= $currency_symbol, login_logo=$login_logo, invoice_logo=$invoice_logo, background_login_image = $background_login_image";
+  if (pg_query($q1) === TRUE) {
    
       $_SESSION['success']='Record Successfully Updated';
       ?>
@@ -88,7 +83,7 @@ if(isset($_POST["btn_web"]))
 }
   ?>
   <script>
-  //window.location = "sms_config.php";
+  window.location = "sms_config.php";
   </script>
   <?php
 }
@@ -96,9 +91,9 @@ if(isset($_POST["btn_web"]))
 ?>
 
 <?php
-$que="select * from manage_website";
-$query=$conn->query($que);
-while($row=mysqli_fetch_array($query))
+$que="SELECT * FROM manage_website";
+$query=pg_query($que);
+while($row=pg_fetch_array($query))
 {
   //print_r($row);
   extract($row);
