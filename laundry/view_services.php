@@ -1,6 +1,4 @@
-<?php include('head.php');?>
-<?php include('header.php');?>
-<?php include('sidebar.php');
+<?php include('all-head.php');
 
 if(isset($_GET['id']))
 { ?>
@@ -65,13 +63,12 @@ if(isset($_GET['id']))
                     </thead>
                                         <tbody>
                <?php 
-                    include 'connect.php';
 
-                $sql = "SELECT * FROM service";
+                $sql = "SELECT * FROM services";
 
-             $result = $conn->query($sql);
+             $result = pg_query($sql);
 
-        while($row = $result->fetch_assoc()) {
+        while($row = pg_fetch_assoc($result)) {
                                       ?>
                   <tr>
          <td><?php echo $row['id']; ?></td>
@@ -94,7 +91,7 @@ if(isset($_GET['id']))
 </div>
 </div>
 </div>
-                -->
+              
                 <!-- /# row -->
 
                 <!-- End PAge Content -->

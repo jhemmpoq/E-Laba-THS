@@ -1,6 +1,4 @@
-<?php include('head.php');?>
-<?php include('header.php');?>
-<?php include('sidebar.php');
+<?php include('all-head.php');
 
 if(isset($_GET['id']))
 { ?>
@@ -62,21 +60,21 @@ Sure
 <tbody>
 <?php 
 include 'connect.php';
-$sql ="SELECT * FROM `order` WHERE `delivery date`=CURDATE()";
+$sql ="SELECT * FROM orders WHERE delivery_date = CURRENT_DATE";
 
-$result = $conn->query($sql);
+$result = pg_query($sql);
 
-while($row = $result->fetch_assoc())
+while($row = pg_fetch_assoc($result))
 
 {
 $sql1 = "SELECT * FROM `service` where id='".$row['sname']."'";
-$result1 = $conn->query($sql1);
-$row1 = $result1->fetch_assoc();
+$result1 = pg_query($sql1);
+$row1 = pg_fetch_assoc($result1);
 
-$sql2 = "SELECT * FROM `customer` where 
+$sql2 = "SELECT * FROM customer WHERE 
 id='".$row['fname']."'";
-$result2 = $conn->query($sql2);
-$row2 = $result2->fetch_assoc();
+$result2 =pg_query($sql2);
+$row2 = pg_fetch_assoc($result2);
 ?>
 <tr>
 <td><?php echo $row['id']; ?></td>
