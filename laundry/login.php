@@ -82,7 +82,7 @@ else {?>
     <div id="main-wrapper">
         <div class="unix-login">
              <?php
-             $sql_login = "select * from manage_website"; 
+             $sql_login = "SELECT * FROM manage_website"; 
              $result_login = pg_query($sql_login);
              $row_login =pg_fetch_array($result_login);
              ?>

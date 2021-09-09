@@ -137,10 +137,10 @@
         </div>
         <div class="card">
 <div class="card-body">
-<div class="col-md-5 align-self-center">
+<!-- <div class="col-md-5 align-self-center">
                     <h3 class="text-primary">Orders Status</h3> </div>
-<div class="table-responsive m-t-40">
-    <table id="myTable" class="table table-bordered table-striped">
+<div class="table-responsive m-t-40"> -->
+    <!-- <table id="myTable" class="table table-bordered table-striped">
         <thead>
             <tr>
                 <th>ID</th>
@@ -153,55 +153,55 @@
                 <th>Status</th>
             </tr>
         </thead>
-    <tbody>
-<?php 
-$sql = "SELECT * FROM orders";
-$result = pg_query($sql);
+    <tbody> -->
+<!-- <?php 
+// $sql = "SELECT * FROM orders";
+// $result = pg_query($sql);
 
-while($row = pg_fetch_assoc($result))
+// while($row = pg_fetch_assoc($result))
 
-{
-$sql1 = "SELECT * FROM services where id='".$row['sname']."'" ;
-$result1 = pg_query($sql1);
-$row1 = pg_fetch_assoc($result1);
+// {
+// $sql1 = "SELECT * FROM services where id='".$row['sname']."'" ;
+// $result1 = pg_query($sql1);
+// $row1 = pg_fetch_assoc($result1);
 
-$sql2 = "SELECT * FROM customer WHERE id='".$row['fname']."'";
-$result2 = pg_query($sql2);
-$row2 = pg_fetch_assoc($result2);
+// $sql2 = "SELECT * FROM customer WHERE id='".$row['fname']."'";
+// $result2 = pg_query($sql2);
+//$row2 = pg_fetch_assoc($result2);
 ?>
 <tr>
-<td><?php echo $row['id']; ?></td>
-<td><?php echo $row2['fname']; ?></td>
-<?php echo $row['lname']; ?>
-<td><?php echo isset($row1['sname']) ? $row1['sname'] : "N/A"; ?></td>
+<td><?php //echo $row['id']; ?></td>
+<td><?php //echo $row2['fname']; ?></td>
+<?php ///echo $row['lname']; ?>
+<td><?php //cho isset($row1['sname']) ? $row1['sname'] : "N/A"; ?></td>
 
-<td><?php echo $row['discription']; ?></td>
-<td><?php echo $row['prizes']; ?></td>
-<td><?php echo $row['delivery_date']; ?></td>
-<td><?php echo $row['todays_date']; ?></td>
-<?php if ($row['delivery_status']==0) {
+<td><?php //echo $row['discription']; ?></td>
+<td><?php //echo $row['prizes']; ?></td>
+<td><?php //echo $row['delivery_date']; ?></td>
+<td><?php //echo $row['todays_date']; ?></td>
+<?php //if ($row['delivery_status']==0) {
 ?>
 <td>pending</td>
-<?php } 
-else{
+<?php //} 
+//else{
 
 ?>
 <td>completed</td>
-<?php }?>
+<?php //}?>
 <td>
-<?php if ($row['delivery_status']==0) {
+<?php //if ($row['delivery_status']==0) {
 ?>
 
-<?php }?>
+<?php //}?> -->
 
 
 
 
 
-<a href="assign_role.php?id=<?=$row['id'];?>"><button type="button" class="btn btn-xs btn-danger" ><i class="fa fa-pay"></i></button></a>
+<!-- <a href="assign_role.php?id=<?=$row['id'];?>"><button type="button" class="btn btn-xs btn-danger" ><i class="fa fa-pay"></i></button></a> -->
 </td>
 </tr>
-<?php } ?>
+<?php //} ?>
 </tbody>
 </table>
 </div>
