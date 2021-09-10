@@ -1,17 +1,6 @@
 -- Database: e-laba
 
 -- DROP DATABASE "e-laba";
-
-CREATE DATABASE "e-laba"
-    WITH 
-    OWNER = postgres
-    ENCODING = 'UTF8'
-    LC_COLLATE = 'English_United States.1252'
-    LC_CTYPE = 'English_United States.1252'
-    TABLESPACE = pg_default
-    CONNECTION LIMIT = -1;
-
-
     -- Table: public.admins
 
 -- DROP TABLE public.admins;
@@ -39,7 +28,7 @@ TABLESPACE pg_default;
 ALTER TABLE public.admins
     OWNER to postgres;
 
-    INSERT INTO admins (id, username, email, password, fname, lname, gender, dob, contact, address, image, created_on, group_id) VALUES
+    INSERT INTO admins (id, username, email, password, fname, lname, gender, dob, contact, address, images, created_on, group_id) VALUES
 (1, 'admin', 'ndbhalerao91@gmail.com', 'aa7f019c326413d5b8bcad4314228bcd33ef557f5d81c7cc977f7728156f4357', 'Nikhil', 'Bhalerao', 'Male', '2018-11-26', '9423979339', 'Nashik', 'unr_harrypotter_171212_1815_34k5k.png', '2018-04-30', 1),
 (3, 'user', 'ndbhalerao91@gmail.com', 'db8cd0860d3eeba4da1801178e4942dc4e515484cc9176983d3335a23cc1afb1', 'rushi', 'bhalerao', 'Female', '2019-06-06', '9423979339', 'advx', '', '2019-06-26', 0),
 (4, 'user', 'admin@admin.com', 'c7af47bc241fbf1888df2b5e466672c67b1d8987e280836554490d51dbe65cb4', 'sandip', 'vidhate', 'Male', '2019-06-03', '2589632147', 'nasik', 'mylogo.png', '2019-06-27', 0),
@@ -123,7 +112,7 @@ TABLESPACE pg_default;
 ALTER TABLE public.orders
     OWNER to postgres;
 
-    INSERT INTO order (id, fname, lname, sname, discription, prizes, delivery date, delivery_status, todays_date) VALUES
+    INSERT INTO orders (id, fname, lname, sname, discription, prizes, delivery_date, delivery_status, todays_date) VALUES
 (18, '11', '', '4', 'sfvs', '50', '2019-06-30', 1, '2019-06-27'),
 (19, '10', '', '4', 'ascfa', '50', '2019-06-29', 1, '2019-06-27'),
 (25, '10', '', '14', 'dress', '160', '2019-06-29', 1, '2019-06-28'),
