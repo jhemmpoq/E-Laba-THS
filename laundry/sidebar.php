@@ -6,7 +6,7 @@
  <!-- Left Sidebar  -->
         <div class="left-sidebar">
             <!-- Sidebar scroll-->
-            <div class="scroll-sidebar">
+            <div class="scroll-sidebar" style="overflow: visible;">
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
