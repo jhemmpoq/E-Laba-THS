@@ -12,11 +12,14 @@
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
      <?php
              include('connect.php');
-             $sql_head_title = "SELECT * FROM manage_website"; 
-             $result_head_title = pg_query($sql_head_title);
-             $row_head_title = pg_fetch_array($result_head_title);
+            //  $sql_head_title = "SELECT * FROM manage_website"; 
+            //  $result_head_title = pg_query($sql_head_title);
+            //  $row_head_title = pg_fetch_array($result_head_title);
              ?>
-    <title><?php echo $row_head_title['title'];?></title>
+    <title>
+      <?php //echo $row_head_title['title'];?>
+      E-Laba - Laundry Management System
+  </title>
 
     <link href="css/lib/chartist/chartist.min.css" rel="stylesheet">
   <link href="css/lib/owl.carousel.min.css" rel="stylesheet" />
