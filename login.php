@@ -44,7 +44,7 @@ $pass = hash('sha256', $salt . $passw);
     <p>Login Successfully</p>
     <p>
      <!--  <a href="index.php"><button class="button button--success" data-for="js_success-popup"></button></a> -->
-     <?php echo "<script>setTimeout(\"location.href = 'index.php';\",1500);</script>"; ?>
+     <?php echo "<script>setTimeout(\"location.href = 'laundry/index.php';\",1500);</script>"; ?>
     </p>
   </div>
 </div>
@@ -86,13 +86,13 @@ else {?>
              $result_login = pg_query($sql_login);
              $row_login =pg_fetch_array($result_login);
              ?>
-            <div class="container-fluid" style="background-image: url('uploadImage/Logo/<?php echo $row_login['background_login_image'];?>');
+            <div class="container-fluid" style="background-image: url('laundry/uploadImage/Logo/<?php echo $row_login['background_login_image'];?>');
  background-color: #cccccc;">
                 <div class="row justify-content-center">
                     <div class="col-lg-4">
                         <div class="login-content card">
                             <div class="login-form">
-                                <center><img src="uploadImage/Logo/<?php echo $row_login['login_logo'];?>" style="width:50%;"></center><br><!-- <h4>Login</h4> -->
+                                <center><img src="laundry/uploadImage/Logo/<?php echo $row_login['login_logo'];?>" style="width:50%;"></center><br><!-- <h4>Login</h4> -->
                                 <form method="POST">
                                <div class="form-group">
                                         <label>Email address</label>
