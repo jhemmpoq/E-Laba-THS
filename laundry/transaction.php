@@ -1,4 +1,8 @@
-<?php include('all-head.php');
+<?php 
+    include('head.php');
+    include('header.php');
+    include('../sidebar.php');  
+    include('../connect.php');
 
 if(isset($_GET['id']))
 { ?>
@@ -11,7 +15,7 @@ Sure
 <p>Are You Sure To Delete This Record?</p>
 <p>
 <a href="del_order.php?id=<?php echo $_GET['id']; ?>" class="button button--success" data-for="js_success-popup">Yes</a>
-<a href="view_order.php" class="button button--error" data-for="js_success-popup">No</a>
+<a href="transaction.php" class="button button--error" data-for="js_success-popup">No</a>
 </p>
 </div>
 </div>
@@ -109,7 +113,7 @@ else{
 <?php } } ?>
 
 <?php if(isset($useroles)){  if(in_array("delete_order",$useroles)){ ?> 
-<a href="view_order.php?id=<?=$row['id'];?>"><button type="button" class="btn btn-xs btn-danger" ><i class="fa fa-trash"></i></button></a>
+<a href="transaction.php?id=<?=$row['id'];?>"><button type="button" class="btn btn-xs btn-danger" ><i class="fa fa-trash"></i></button></a>
 <?php } } ?>
 <!-- <a href="assign_role.php?id=<?=$row['id'];?>"><button type="button" class="btn btn-xs btn-danger" ><i class="fa fa-pay"></i></button></a> -->
 </td>

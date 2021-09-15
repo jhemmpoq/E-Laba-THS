@@ -1,4 +1,10 @@
-<?php include('all-profile.php') ?>
+<?php 
+    include('head.php');
+    include('header.php');
+    include('../sidebar.php');  
+    include('../connect.php');
+    ?>
+
 
   <!-- Page wrapper  -->
         <div class="page-wrapper">

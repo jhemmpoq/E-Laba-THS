@@ -1,5 +1,9 @@
-
-<?php include('all-head.php'); ?>
+<?php 
+    include('head.php');
+    include('header.php');
+    include('../sidebar.php');  
+    include('../connect.php');
+?>
 
 
   <!-- Page wrapper  -->
@@ -35,7 +39,7 @@
                                         </thead>
                                         <tbody>
                                           <?php 
-                                          include 'connect.php';
+                                          include '../connect.php';
                                           $sql = "SELECT * FROM tbl_group WHERE name != 'admin'";
                                            $result = pg_query($sql);
                                             $i=1;

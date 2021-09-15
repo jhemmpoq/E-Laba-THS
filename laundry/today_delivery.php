@@ -1,4 +1,7 @@
-<?php include('all-head.php');
+<?php include('head.php'); ?>
+<?php include('header.php'); ?>
+<?php include('../sidebar.php');
+
 
 if(isset($_GET['id']))
 { ?>
@@ -11,7 +14,7 @@ Sure
 <p>Are You Sure To Delete This Record?</p>
 <p>
 <a href="del_order.php?id=<?php echo $_GET['id']; ?>" class="button button--success" data-for="js_success-popup">Yes</a>
-<a href="view_order.php" class="button button--error" data-for="js_success-popup">No</a>
+<a href="transaction.php" class="button button--error" data-for="js_success-popup">No</a>
 </p>
 </div>
 </div>
@@ -59,7 +62,7 @@ Sure
 </thead>
 <tbody>
 <?php 
-include 'connect.php';
+include '../connect.php';
 $sql ="SELECT * FROM orders WHERE delivery_date=CURRENT_DATE";
 
 $result = pg_query($sql);
