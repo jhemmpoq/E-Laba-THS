@@ -1,9 +1,8 @@
-<?php
+<?php 
 
- include('head.php');
- include('header.php');
- include('sidebar.php');
- include('connect.php');
-
+    include('../head.php');
+    include('../header.php');
+    include('../sidebar.php');
+    include('../connect.php');
 
 ?>

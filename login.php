@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="laundry/popup_style.css">
 
    <?php
-  include('laundry/connect.php');
+  include('connect.php');
 if(isset($_POST['btn_login']))
 {
 $unm = $_POST['email'];
@@ -44,7 +44,7 @@ $pass = hash('sha256', $salt . $passw);
     <p>Login Successfully</p>
     <p>
      <!--  <a href="index.php"><button class="button button--success" data-for="js_success-popup"></button></a> -->
-     <?php echo "<script>setTimeout(\"location.href = 'laundry/index.php';\",1500);</script>"; ?>
+     <?php echo "<script>setTimeout(\"location.href = 'index.php';\",1500);</script>"; ?>
     </p>
   </div>
 </div>

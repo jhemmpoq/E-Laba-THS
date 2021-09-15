@@ -1,9 +1,4 @@
-<?php 
-    include('head.php');
-    include('header.php');
-    include('../sidebar.php');
-
-?>
+<?php include('all-head.php'); ?> 
 <?php //echo  $_SESSION["email"];
  date_default_timezone_set('Asia/Kolkata');
  $current_date = date('Y-m-d');

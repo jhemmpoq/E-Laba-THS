@@ -1,7 +1,7 @@
-<?php include('head.php');
-      include('header.php');
-      include('sidebar.php');
-      include('connect.php');
+<?php include('../head.php');
+      include('../header.php');
+      include('../sidebar.php');
+      include('../connect.php');
 
       if(isset($_POST["btn_update"]))
 {

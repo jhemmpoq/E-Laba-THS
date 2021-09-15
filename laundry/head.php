@@ -11,7 +11,7 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
      <?php
-             include('connect.php');
+             include('../connect.php');
             //  $sql_head_title = "SELECT * FROM manage_website"; 
             //  $result_head_title = pg_query($sql_head_title);
             //  $row_head_title = pg_fetch_array($result_head_title);
