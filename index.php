@@ -1,3 +1,3 @@
 <?php
-    include('laundry/index.php');
+    include('login.php');
 ?>
