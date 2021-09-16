@@ -3,14 +3,14 @@
 <link rel="stylesheet" href="popup_style.css">
 
    <?php
-  include('../connect.php');
+  include('connect.php');
 if(isset($_POST['btn_login']))
 {
 $unm = $_POST['email'];
 //echo $_POST['passwd'];
 //$p="admin";
 $passw = hash('sha256', $_POST['password']);
-//$passw = hash('sha256',$p);
+//$passw = hash('sha256',$p); 
 //echo $passw;exit;
 function createSalt()
 {

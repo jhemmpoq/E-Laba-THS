@@ -1,3 +1,3 @@
-<?php
-    include('login.php');
-?>
+<script>
+    window.location="laundry/index.php";
+</script>

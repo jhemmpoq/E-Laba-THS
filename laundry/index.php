@@ -1,7 +1,7 @@
 <?php 
     include('head.php');
     include('header.php');
-    include('../sidebar.php');
+    include('sidebar.php');
 
 ?>
 <?php //echo  $_SESSION["email"];
