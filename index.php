@@ -1,3 +1,3 @@
 <script>
-    window.location="laundry/index.php";
+    window.location="laundry/login.php";
 </script>

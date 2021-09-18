@@ -1,8 +1,8 @@
 <?php
-include 'connect.php';
+include ('connect.php');
 session_start();
 
-$sql = "DELETE FROM service WHERE id='".$_GET["id"]."'";
+$sql = "DELETE FROM services WHERE id='".$_GET["id"]."'";
 $res = pg_query($sql) ;
  $_SESSION['success']=' Record Successfully Deleted';
 ?>

@@ -1,8 +1,5 @@
 <?php 
-    include('head.php');
-    include('header.php');
-    include('../sidebar.php');  
-    include('../connect.php');
+    include('all-head.php');
 
 
 if(isset($_POST["btn_mail"]))

@@ -29,7 +29,7 @@
 
   <!-- /# row -->
   <div class="row">
-  <div class="col-lg-8" style="    margin-left: 10%;">
+  <div class="col-lg-8" style="margin-left: 10%;">
   <div class="card">
   <div class="card-title">
 

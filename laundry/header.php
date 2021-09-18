@@ -18,7 +18,7 @@
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
                 <!-- Logo -->
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="../index.php">
+                    <a class="navbar-brand" href="index.php">
                         <!-- Logo icon -->
                          <?php
              $sql_header_logo = "SELECT * FROM manage_website"; 
