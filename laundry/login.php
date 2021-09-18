@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="popup_style.css">
 
    <?php
-  include('../connect.php');
+  include('connect.php');
 if(isset($_POST['btn_login']))
 {
 $unm = $_POST['email'];

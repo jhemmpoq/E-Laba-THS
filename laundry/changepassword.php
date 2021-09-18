@@ -1,10 +1,5 @@
 
-<?php include('head.php');?>
-<?php include('header.php');?>
-<?php include('sidebar.php');?>
-
- <?php
- include('connect.php');
+<?php include('all-head.php');
 
 if($_SESSION["username"]=='admin' || $_SESSION["username"]=='user'){
     
@@ -14,8 +9,8 @@ else {
    $q = "select * from  tbl_customer where id = '".$_SESSION['id']."'";
 }
  
-  $q1 = $conn->query($q);
-  while($row = mysqli_fetch_array($q1)){
+  $q1 = pg_query($q);
+  while($row = pg_fetch_array($q1)){
     extract($row);
     $db_pass = $row['password'];
   }
@@ -56,7 +51,7 @@ else {
   $sql = "update  tbl_customer set `password`='$confirm' where id = '".$_SESSION['id']."'";
 }    
   
-  $res = $conn->query($sql);
+  $res = pg_query($sql);
   ?>
    <div class="popup popup--icon -success js_success-popup popup--visible">
   <div class="popup__background"></div>

@@ -1,9 +1,4 @@
-<?php include('head.php');?>
-
-<?php include('header.php');?>
-<?php include('sidebar.php');?>
-
- <?php
+<?php include('all-head.php');
  include('connect.php');
  date_default_timezone_set('Asia/Kolkata');
  $current_date = date('Y-m-d');
@@ -19,7 +14,7 @@
             <!-- Bread crumb -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-primary">service Details</h3> </div>
+                    <h3 class="text-primary">Service Details</h3> </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
@@ -59,7 +54,8 @@
                              <div class="row">
              <label class="col-sm-3 control-label">PRIZES</label>
                                 <div class="col-sm-9">
-             <input type="text" name="prize" class="form-control" placeholder="PRIZES" id="tbprize"   onkeypress="javascript:return isNumber(event)" required="">
+             <input type="text" name="priz
+             e" class="form-control" placeholder="PRIZES" id="tbprize"   onkeypress="javascript:return isNumber(event)" required="">
                          </div>
                      </div>
                                         </div>

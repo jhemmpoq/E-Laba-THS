@@ -1,7 +1,6 @@
-<?php include('head.php'); ?>
-<?php include('header.php'); ?>
-<?php include('../sidebar.php');
-
+<?php 
+    include('all-head.php');
+  
 
 if(isset($_GET['id']))
 { ?>
@@ -62,7 +61,6 @@ Sure
 </thead>
 <tbody>
 <?php 
-include '../connect.php';
 $sql ="SELECT * FROM orders WHERE delivery_date=CURRENT_DATE";
 
 $result = pg_query($sql);

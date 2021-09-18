@@ -1,6 +1,6 @@
 <!-- footer -->
              <?php
-             include('../connect.php');
+             include('connect.php');
              $sql_footer = "SELECT * FROM manage_website"; 
              $result_footer = pg_query($sql_footer);
              $row_footer = pg_fetch_array($result_footer);

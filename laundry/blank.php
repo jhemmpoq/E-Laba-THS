@@ -1,7 +1,4 @@
-<?php include('head.php');?>
-<?php include('header.php');?>
-
-<?php include('sidebar.php');?>   
+<?php include('all-head.php');?> 
    
         <!-- Page wrapper  -->
         <div class="page-wrapper">

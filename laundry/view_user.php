@@ -1,9 +1,5 @@
 <?php 
-    include('head.php');
-    include('header.php');
-    include('../sidebar.php');  
-    include('../connect.php');
-
+    include('all-head.php');
 
 if(isset($_GET['id']))
 { ?>
@@ -62,8 +58,7 @@ if(isset($_GET['id']))
                                             </tr>
                                         </thead>
                                         <tbody>
-                                    <?php 
-                                    include '../connect.php';
+                                    <?php include('connect.php');
                                     $sql = "SELECT * FROM admins WHERE username =user";
                                      $result = pg_query($sql);
 

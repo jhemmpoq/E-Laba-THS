@@ -24,7 +24,7 @@ $salt = createSalt();
 extract($_POST);
 $sname=$_POST['sname'];
 
-  $sql="INSERT INTO services (sname, prize) VALUES ($sname, $prize)";
+  $sql="INSERT INTO public.services (sname, prize) VALUES ($sname, $prize)";
 
 
  if (pg_query($sql) === TRUE)
