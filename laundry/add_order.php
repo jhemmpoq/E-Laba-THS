@@ -129,12 +129,20 @@ PHP, Laravel and Codeignitor Developer -->
   </div>
   </div>
 
+  <div class="form-group">
+  <div class="row">
+  <label class="col-sm-3 control-label">Status</label>
+  <div class="col-sm-9">
+  <input type="" name="delivery_status" class="form-control" value=0>
+  </div>
+  </div>
+  </div>
 
 <div class="form-group">
   <div class="row">
   <label class="col-sm-3 control-label">Todays Date</label>
   <div class="col-sm-9">
-  <input  name="todays_date" class="form-control"  value="<?php echo date('y/m/d'); ?>">
+  <input  name="todays_date" class="form-control"  value="<?php //echo date('yy-m-d'); ?>">
   </div>
   </div>
   </div>

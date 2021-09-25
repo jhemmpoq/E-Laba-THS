@@ -142,6 +142,9 @@
         </div>
         <div class="card">
 <div class="card-body">
+<div id="chart-container">
+        <canvas id="graphCanvas"></canvas>
+    </div>
 <!-- <div class="col-md-5 align-self-center">
                     <h3 class="text-primary">Orders Status</h3> </div>
 <div class="table-responsive m-t-40"> -->
@@ -221,3 +224,51 @@ PHP, Laravel and Codeignitor Developer -->
 
 <!--  Author Name: Nikhil Bhalerao - www.nikhilbhalerao.com 
 PHP, Laravel and Codeignitor Developer -->
+
+<script>
+        $(document).ready(function () {
+            showGraph();
+        });
+
+
+        function showGraph()
+        {
+            {
+                $.post("data.php",
+                function (data)
+                {
+                    console.log(data);
+                        var name = [];
+                        var marks = [];
+
+                    for (var i in data) {
+                        name.push(data[i].name);
+                        marks.push(data[i].marks);
+                    }
+
+                    var chartdata = {
+                        labels: name,
+                        datasets: [
+                            {
+                                // label: 'Student Marks',
+                                label: 'Orders',
+                                backgroundColor: '#49e2ff',
+                                borderColor: '#46d5f1',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                //data: marks
+                                data: orders
+                            }
+                        ]
+                    };
+
+                    var graphTarget = $("#graphCanvas");
+
+                    var barGraph = new Chart(graphTarget, {
+                        type: 'bar',
+                        data: chartdata
+                    });
+                });
+            }
+        }
+        </script>

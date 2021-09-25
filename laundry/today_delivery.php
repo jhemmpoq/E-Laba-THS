@@ -26,11 +26,11 @@ Sure
 <!-- Bread crumb -->
 <div class="row page-titles">
 <div class="col-md-5 align-self-center">
-<h3 class="text-primary"> View order</h3> </div>
+<h3 class="text-primary"> View Order</h3> </div>
 <div class="col-md-7 align-self-center">
 <ol class="breadcrumb">
 <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-<li class="breadcrumb-item active">View order</li>
+<li class="breadcrumb-item active">View Order</li>
 </ol>
 </div>
 </div>
@@ -61,7 +61,7 @@ Sure
 </thead>
 <tbody>
 <?php 
-$sql ="SELECT * FROM orders WHERE delivery_date=CURRENT_DATE";
+$sql ="SELECT * FROM orders WHERE delivery_date = CURRENT_DATE";
 
 $result = pg_query($sql);
 

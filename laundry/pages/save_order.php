@@ -26,8 +26,8 @@ extract($_POST);
 $sname=$_POST['sname'];
 $exp=explode(',', $sname);
 
-   $sql="INSERT INTO public.orders (fname, sname, discription, prizes, delivery_date, todays_date) 
-          VALUES ($fname, $exp[0], $discription, $prizes, $dod, $todays_date)";
+   $sql= "INSERT INTO public.orders (fname, sname, discription, prizes, delivery_date, delivery_status, todays_date) 
+          VALUES ('$fname', '$exp[0]', '$discription', '$prizes', '$dod','$delivery_status' , '$todays_date')";
  if (pg_query($sql) === TRUE) {
       $_SESSION['success']=' Record Successfully Added';
      ?>
@@ -39,6 +39,6 @@ window.location="../transaction.php";
       $_SESSION['error']='Something Went Wrong';
 ?>
 <script type="text/javascript">
-//window.location="../transaction.php";
+window.location="../transaction.php";
 </script>
 <?php } ?>

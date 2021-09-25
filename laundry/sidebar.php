@@ -108,7 +108,7 @@
                                <?php //if($_SESSION["username"]=='user' || $_SESSION["username"]=='admins') { ?>
                                <!-- <li><a href="manage_website.php">Appearance Management</a></li> -->
                              <?php //} ?>
-                             <li><a href="view_services.php">Services</a></li>
+                             <li><a href="view_services.php">Service Management</a></li>
                              <li><a href="profile.php">Profile Setting</a></li>
                              <li><a href="email_config.php">Email Management</a></li>
                              <li><a href="view_user.php">User Management</a></li>
