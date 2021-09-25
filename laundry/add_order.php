@@ -129,11 +129,11 @@ PHP, Laravel and Codeignitor Developer -->
   </div>
   </div>
 
-  <div class="form-group">
+  <div class="form-group" style="display: none;">
   <div class="row">
   <label class="col-sm-3 control-label">Status</label>
   <div class="col-sm-9">
-  <input type="" name="delivery_status" class="form-control" value=0>
+  <input type=""  name="delivery_status" class="form-control" value=0>
   </div>
   </div>
   </div>

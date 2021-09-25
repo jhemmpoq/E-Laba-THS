@@ -8,6 +8,6 @@ $res = pg_query($sql) ;
 ?>
 <script>
 //alert("Delete Successfully");
-window.location = "view_order.php";
+window.location = "transaction.php";
 </script>
 
