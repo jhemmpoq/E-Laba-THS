@@ -56,7 +56,7 @@ $q1 ="SELECT * FROM  tbl_group where id = '".$_GET['id']."'";
 $result1 =pg_query($q1);
 while($row1 = pg_fetch_array($result1)){  
 $name =  $row1['name'];
-$description =  $row1['description'];
+$description =  $row1['descriptions'];
 // $id = $row["id"]; 
 } ?>
 <form  method="POST">

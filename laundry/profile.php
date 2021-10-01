@@ -33,18 +33,9 @@
                                     <form class="form-horizontal" method="POST" enctype="multipart/form-data">
                                         <div class="form-group">
                                             <div class="row">
-                                                <label class="col-sm-3 control-label">First Name</label>
+                                                <label class="col-sm-3 control-label">Full Name</label>
                                                 <div class="col-sm-9">
                                                     <input type="text"  value="<?php echo $fname;?>"  name="fname" class="form-control" id="event" onkeydown="return alphaOnly(event);" required>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                         <div class="form-group">
-                                            <div class="row">
-                                                <label class="col-sm-3 control-label">Last Name</label>
-                                                <div class="col-sm-9">
-                                                    <input type="text"  value="<?php echo $lname;?>"  name="lname" class="form-control" id="event" onkeydown="return alphaOnly(event);" required>
                                                 </div>
                                             </div>
                                         </div>

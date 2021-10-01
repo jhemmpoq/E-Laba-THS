@@ -71,19 +71,17 @@ $sql1 = "SELECT * FROM services where id='".$row['sname']."'";
 $result1 = pg_query($sql1);
 $row1 = pg_fetch_assoc($result1);
 
-$sql2 = "SELECT * FROM customer where id='".$row['fname']."'";
+$sql2 = "SELECT * FROM services where id='".$row['price']."'";
 $result2 = pg_query($sql2);
 $row2 = pg_fetch_assoc($result2);
 ?>
 <tr>
 <td><?php echo $row['id']; ?></td>
-<td><?php echo $row2['fname']; ?></td>
-<!-- <td><?php echo $row['lname']; ?></td> -->
+<td><?php echo $row['fname']; ?></td>
 <td><?php echo $row1['sname']; ?></td>
-
-<td><?php echo $row['discription']; ?></td>
-<td><?php echo $row['prizes']; ?></td>
-<td><?php echo $row['delivery date']; ?></td>
+<td><?php echo $row['descriptions']; ?></td>
+<td><?php echo $row['price']; ?></td>
+<td><?php echo $row['delivery_date']; ?></td>
 <?php if ($row['delivery_status']==0) {
 ?>
 <td>pending</td>

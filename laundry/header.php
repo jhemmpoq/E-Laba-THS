@@ -80,7 +80,6 @@
                                       //print_r($row);
                                       extract($row);
                                       $fname = $row['fname'];
-                                      $lname = $row['lname'];
                                       $email = $row['email'];
                                       $contact = $row['contact'];
                                       $dob1 = $row['dob'];

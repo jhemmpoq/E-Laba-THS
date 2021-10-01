@@ -83,7 +83,7 @@
   $result2 = pg_query($sql2); 
   while($row2= pg_fetch_array($result2)){
   ?>
-  <option value ="<?php echo $row2['id'].','.$row2['prize'];?>"><?php echo $row2['sname'];?> </option>
+  <option value ="<?php echo $row2['id'].','.$row2['price'];?>"><?php echo $row2['sname'];?> </option>
   <?php } ?>
   </select>
 </div>
@@ -96,7 +96,7 @@ PHP, Laravel and Codeignitor Developer -->
   <div class="row">
   <label class="col-sm-3 control-label">Description</label>
   <div class="col-sm-8">
-  <textarea class="form-control" rows="4" name="discription" placeholder="Description" style="height: 80px;"></textarea>
+  <textarea class="form-control" rows="4" name="descriptions" placeholder="Description" style="height: 80px;"></textarea>
   </div>
   </div>
   </div>
@@ -112,7 +112,7 @@ PHP, Laravel and Codeignitor Developer -->
   <div class="row">
   <label class="col-sm-3 control-label">PRICE</label>
   <div class="col-sm-9">
-    <input type="number" name="prizes" id="prizes" readonly>
+    <input type="number" name="price" id="prizes" readonly>
   </div>
   </div>
   </div>

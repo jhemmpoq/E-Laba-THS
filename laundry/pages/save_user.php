@@ -23,7 +23,7 @@ if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
       $msg = "Failed to upload image";
     }
 extract($_POST);
-   $sql = "INSERT INTO admins (username, email,password, fname, lname, gender,  dob,contact, address,created_on,images,group_id)VALUES ('user', '$email','$pass', '$fname', '$lname', '$gender', '$dob', '$contact', '$address','$current_date','$image','$group_id')";
+   $sql = "INSERT INTO admins (username, email,password, fname, gender,  dob,contact, address,created_on,images,group_id)VALUES ('user', '$email','$pass', '$fname', '$gender', '$dob', '$contact', '$address','$current_date','$image','$group_id')";
  if (pg_query($sql) === TRUE) {
       $_SESSION['success']=' Record Successfully Added';
      ?>
