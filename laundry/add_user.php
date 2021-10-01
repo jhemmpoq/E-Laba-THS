@@ -44,18 +44,9 @@
 
                                         <div class="form-group">
                                             <div class="row">
-                                                <label class="col-sm-3 control-label">First Name</label>
+                                                <label class="col-sm-3 control-label">Full Name</label>
                                                 <div class="col-sm-9">
-                                                  <input type="text" name="fname" class="form-control" placeholder="First Name" id="event" onkeydown="return alphaOnly(event);" required="">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                         <div class="form-group">
-                                            <div class="row">
-                                                <label class="col-sm-3 control-label">Last Name</label>
-                                                <div class="col-sm-9">
-                                                    <input type="text"  name="lname" id="lname" class="form-control" id="event" onkeydown="return alphaOnly(event);" placeholder="Last Name" required="">
+                                                  <input type="text" name="fname" class="form-control" placeholder="Full Name" id="event" onkeydown="return alphaOnly(event);" required="">
                                                 </div>
                                             </div>
                                         </div>
@@ -93,7 +84,7 @@
 
                                         <div class="form-group">
                                               <div class="row">
-                                                <label class="col-sm-3 control-label">Date Of Birth</label>
+                                                <label class="col-sm-3 control-label">Date of Birth</label>
                                                 <div class="col-sm-9">
                                                   <input type="date" name="dob" class="form-control" placeholder="Birth Date">
                                                 </div>

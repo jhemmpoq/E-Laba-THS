@@ -48,8 +48,7 @@ if(isset($_GET['id']))
                                     <table id="myTable" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
+                                                <th>Full Name</th>
                                                 <th>Email</th>
                                                 <th>Address</th>
                                                 <th>Contact No.</th>
@@ -59,7 +58,7 @@ if(isset($_GET['id']))
                                         </thead>
                                         <tbody>
                                     <?php include('connect.php');
-                                    $sql = "SELECT * FROM admins WHERE username = 'user'";
+                                    $sql = "SELECT * FROM admins ORDER BY username ASC";
                                      $result = pg_query($sql);
 
                                    while($row = pg_fetch_assoc($result)) { 
@@ -69,7 +68,6 @@ if(isset($_GET['id']))
                                       ?>
                                             <tr>
                                                 <td><?php echo $row['fname']; ?></td>
-                                                <td><?php echo $row['lname']; ?></td>
                                                 <td><?php echo $row['email']; ?></td>
                                                 <td><?php echo $row['address']; ?></td>
                                                 <td><?php echo $row['contact']; ?></td>

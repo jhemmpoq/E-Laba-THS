@@ -24,7 +24,7 @@ $salt = createSalt();
 extract($_POST);
 $sname=$_POST['sname'];
 
-  $sql="INSERT INTO public.services (sname, prize) VALUES ($sname, $prize)";
+  $sql="INSERT INTO public.services (sname, price) VALUES ('$sname', '$prices')";
 
 
  if (pg_query($sql) === TRUE)
@@ -40,6 +40,6 @@ window.location="../view_services.php";
       $_SESSION['error']='Something Went Wrong';
 ?>
 <script type="text/javascript">
-//window.location="../view_services.php";
+// window.location="../view_services.php";
 </script>
 <?php } ?>

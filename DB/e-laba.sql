@@ -40,7 +40,7 @@ ALTER TABLE public.admins
 
 CREATE TABLE IF NOT EXISTS public.customer
 (
-    id integer NOT NULL,
+    id serial NOT NULL,
     fname character varying(50) COLLATE pg_catalog."default" NOT NULL,
     lname character varying(100) COLLATE pg_catalog."default" NOT NULL,
     contact character varying(200) COLLATE pg_catalog."default" NOT NULL,

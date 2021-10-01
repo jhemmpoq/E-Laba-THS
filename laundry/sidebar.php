@@ -70,8 +70,8 @@
          { ?>
                          <li> <a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-table"></i><span class="hide-menu">Status</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="today_delivery.php">Today's Delivery</a></li>
                                <li><a href="pending_order.php">Pending Orders</a></li>
+                               <li><a href="today_delivery.php">Today's Delivery</a></li>
                             </ul>
                         </li>
                     <?php }?>

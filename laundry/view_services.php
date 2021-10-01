@@ -75,7 +75,7 @@ if(isset($_GET['id']))
                   <tr>
          <td><?php echo $row['id']; ?></td>
         <td><?php echo $row['sname']; ?></td>
-      <td><?php echo $row['prize']; ?></td>
+      <td><?php echo $row['price']; ?></td>
     
 
      <td>

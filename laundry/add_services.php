@@ -42,9 +42,9 @@
 
          <div class="form-group">
           <div class="row">
-     <label class="col-sm-3 control-label">service  Name</label>
+     <label class="col-sm-3 control-label">Service  Name</label>
              <div class="col-sm-9">
-     <input type="text" name="sname" class="form-control" placeholder="service name" id="event" onkeydown="return alphaOnly(event);" required="">
+     <input type="text" name="sname" class="form-control" placeholder="Service Name" id="event" onkeydown="return alphaOnly(event);" required="">
            </div>
                             </div>
                              </div>
@@ -52,10 +52,9 @@
                                       
          <div class="form-group">
                              <div class="row">
-             <label class="col-sm-3 control-label">PRIZES</label>
+             <label class="col-sm-3 control-label">Price</label>
                                 <div class="col-sm-9">
-             <input type="text" name="priz
-             e" class="form-control" placeholder="PRIZES" id="tbprize"   onkeypress="javascript:return isNumber(event)" required="">
+             <input type="text" name="prices" class="form-control" placeholder="Price" id="tbprize"   onkeypress="javascript:return isNumber(event)" required="">
                          </div>
                      </div>
                                         </div>
