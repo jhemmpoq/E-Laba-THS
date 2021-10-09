@@ -40,6 +40,6 @@ window.location="../view_services.php";
       $_SESSION['error']='Something Went Wrong';
 ?>
 <script type="text/javascript">
-// window.location="../view_services.php";
+window.location="../view_services.php";
 </script>
 <?php } ?>

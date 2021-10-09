@@ -40,20 +40,19 @@ window.location="view_user.php";
 ?>
 
 <?php
-$que="select * from admin where id='".$_GET["id"]."'";
+$que="SELECT * FROM admins where id='".$_GET["id"]."'";
 $query=pg_query($que);
 while($row=pg_fetch_array($query))
 {
     //print_r($row);
     extract($row);
 $fname = $row['fname'];
-$lname = $row['lname'];
 $email = $row['email'];
 $address = $row['address'];
 $gender = $row['gender'];
 $contact = $row['contact'];
 $dob = $row['dob'];
-$image = $row['image'];
+$image = $row['images'];
 }
 
 ?> 
@@ -98,15 +97,6 @@ $image = $row['image'];
                                                 <label class="col-sm-3 control-label">First Name</label>
                                                 <div class="col-sm-9">
                                                   <input type="text" name="fname" class="form-control" placeholder="First Name" id="event" onkeydown="return alphaOnly(event);" value="<?php echo $fname; ?>" required="">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                         <div class="form-group">
-                                            <div class="row">
-                                                <label class="col-sm-3 control-label">Last Name</label>
-                                                <div class="col-sm-9">
-                                                    <input type="text"  name="lname" id="lname" class="form-control" id="event" onkeydown="return alphaOnly(event);" placeholder="Last Name" value="<?php echo $lname; ?>" required="">
                                                 </div>
                                             </div>
                                         </div>
