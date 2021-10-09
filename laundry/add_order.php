@@ -98,8 +98,17 @@ PHP, Laravel and Codeignitor Developer -->
   <div class="col-sm-8">
   <textarea class="form-control" rows="4" name="descriptions" placeholder="Description" style="height: 80px;"></textarea>
   </div>
+
   </div>
   </div>
+  </div> 
+  <div class="form-group">
+  <div class="row">
+  <label class="col-sm-3 control-label">Kilogram</label>
+  <div class="col-sm-9">
+    <input type="number" name="kg" id="kg" >
+  </div>
+
 
   
 
@@ -158,7 +167,8 @@ PHP, Laravel and Codeignitor Developer -->
   </div>
 
   </div>
-
+  </div>
+  </div>
 
 
 
