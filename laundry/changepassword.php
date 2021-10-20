@@ -3,16 +3,16 @@
 
 if($_SESSION["username"]=='admin' || $_SESSION["username"]=='user'){
     
-    $q = "select * from  admin where id = '".$_SESSION['id']."'";
+    $q = "SELECT * FROM  admins where id = '".$_SESSION['id']."'";
 }
 else {
-   $q = "select * from  tbl_customer where id = '".$_SESSION['id']."'";
+   $q = "SELECT * FROM  tbl_customer where id = '".$_SESSION['id']."'";
 }
  
   $q1 = pg_query($q);
   while($row = pg_fetch_array($q1)){
     extract($row);
-    $db_pass = $row['password'];
+    $db_pass = $row['passwords'];
   }
 
 if(isset($_POST["btn_password"])){
@@ -37,7 +37,7 @@ $confirm =  hash('sha256', $salt . $confirm_new);
     alert('OLD Paasword not matched');
     </script> -->
   <?php } else if($new_pass!=$confirm){ ?> 
-    <?php $_SESSION['error']='NEW Password and CONFIRM password not Matched';?>
+    <?php $_SESSION['error']='Password doesnt match';?>
    <!--  <script>
     alert('NEW Password and CONFIRM password not Matched');
     </script> -->
@@ -45,10 +45,10 @@ $confirm =  hash('sha256', $salt . $confirm_new);
     //$pass = md5($_POST['password']);
 if($_SESSION["username"]=='admin' || $_SESSION["username"]=='user'){
     
-   $sql = "update  admin set `password`='$confirm' where id = '".$_SESSION['id']."'";
+   $sql = "UPDATE  admins SET passwords=$confirm WHERE id = '".$_SESSION['id']."'";
 }
 else {
-  $sql = "update  tbl_customer set `password`='$confirm' where id = '".$_SESSION['id']."'";
+  $sql = "UPDATE  tbl_customer SET passwords=$confirm WHERE id = '".$_SESSION['id']."'";
 }    
   
   $res = pg_query($sql);
@@ -62,7 +62,7 @@ else {
     <p>Password changed Successfully...</p>
     <p>
  <?php  if($_SESSION["username"]=='admin' || $_SESSION["username"]=='user'){ ?>
-      <a href="logout.php"><button class="button button--success" data-for="js_success-popup">Close</button></a>
+      <a href="#"><button class="button button--success" data-for="js_success-popup">Close</button></a>
      <?php }  else { ?>
       <a href="../logout.php"><button class="button button--success" data-for="js_success-popup">Close</button></a>
      <?php } ?>

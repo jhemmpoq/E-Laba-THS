@@ -62,19 +62,25 @@ window.location="transaction.php";
 
 
 <?php
-$que="SELECT * FROM orders WHERE id='".$_GET["id"]."'";
+
+
+
+$que="SELECT * FROM orderss WHERE id='".$_GET["id"]."'";
 
 $query=pg_query($que);
 while($row=pg_fetch_array($query))
 {
+  $sql0 = "SELECT * FROM services where id='".$row['price']."'";
+  $result0 = pg_query($sql0);
+  $row0 = pg_fetch_assoc($result0);
 //print_r($row);
 extract($row);
 $fname = $row['fname'];
 $sname = $row['sname'];
 
-$discription= $row['discription'];
+$discription= $row['descriptions'];
 
-$prizes = $row['prizes'];
+$prizes = $row['kilogram']*$row0['price'];
 $dod = $row['delivery_date'];
 
 }

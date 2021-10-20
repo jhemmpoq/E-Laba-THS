@@ -117,11 +117,11 @@ PHP, Laravel and Codeignitor Developer -->
   </div>
   </div>
   </div> 
-  <div class="form-group">
+  <div class="form-group" style="display: none;">
   <div class="row">
-  <label class="col-sm-3 control-label">PRICE</label>
+  <label class="col-sm-3 control-label">Price</label>
   <div class="col-sm-9">
-    <input type="number" name="price" id="prizes" readonly>
+    <input type="number" name="price" id="prizes">
   </div>
   </div>
   </div>
@@ -151,7 +151,7 @@ PHP, Laravel and Codeignitor Developer -->
   <div class="row">
   <label class="col-sm-3 control-label">Todays Date</label>
   <div class="col-sm-9">
-  <input  name="todays_date" class="form-control"  value="<?php //echo date('yy-m-d'); ?>">
+  <input  name="todays_date" class="form-control"  value="<?php echo date('m-d-Y'); ?>">
   </div>
   </div>
   </div>

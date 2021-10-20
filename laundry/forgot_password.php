@@ -13,8 +13,7 @@ $ans = pg_query($sql);
 $res=pg_fetch_array($ans);
    $realemail=$res['email'];
   $person_fname=$res['fname'];  
-  $person_lname=$res['lname'];
-  $personname=$person_fname.$person_lname;
+  $personname=$person_fname;
   $user_name = $res['username'];
 
   

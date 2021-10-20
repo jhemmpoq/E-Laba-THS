@@ -51,7 +51,7 @@ Sure
 <table id="myTable" class="table table-bordered table-striped">
 <thead>
 <tr>
-<th>ID</th>
+<!-- <th>ID</th> -->
 <th>Customer Name</th>
 <th>Service name</th>
 <th>Desciption</th>
@@ -64,7 +64,7 @@ Sure
 </thead>
 <tbody>
 <?php 
-$sql = "SELECT * FROM orders";
+$sql = "SELECT * FROM orderss";
 $result = pg_query($sql);
 
 while($row = pg_fetch_assoc($result))
@@ -74,17 +74,21 @@ $sql1 = "SELECT * FROM services where id='".$row['sname']."'" ;
 $result1 = pg_query($sql1);
 $row1 = pg_fetch_assoc($result1);
 
-$sql2 = "SELECT * FROM services where id='".$row['price']."'";
-$result2 = pg_query($sql2);
-$row2 = pg_fetch_assoc($result2);
+    $sql2 = "SELECT * FROM services where id='".$row['price']."'";
+    $result2 = pg_query($sql2);
+    $row2 = pg_fetch_assoc($result2);
+
+// $sql3 = "SELECT * FROM orders where id='".$row['price']."'";
+// $result3 = pg_query($sql3);
+// $row3 = pg_fetch_assoc($result3);
 ?>
 <tr>
-<td><?php echo $row['id']; ?></td>
+<!-- <td><?php //echo $row['id']; ?></td> -->
 <td><?php echo $row['fname']; ?></td>
 <td><?php echo isset($row1['sname']) ? $row1['sname'] : 'N/A'; ?></td>
 
 <td><?php echo $row['descriptions']; ?></td>
-<td><?php echo $row2['price']; ?></td>
+<td><?php echo $row['kilogram'] * $row2['price']; ?></td>
 <td><?php echo $row['delivery_date']; ?></td>
 <td><?php echo $row['todays_date']; ?></td>
 <?php if ($row['delivery_status']==0) {
