@@ -75,6 +75,7 @@ CREATE TABLE IF NOT EXISTS public.orders
     descriptions character varying(200) COLLATE pg_catalog."default" NOT NULL,
     kilogram  double precision COLLATE pg_catalog."default",
     price character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    total_price character varying(50) COLLATE pg_catalog."default" NOT NULL,
     delivery_date date NOT NULL,
     delivery_status integer NOT NULL,
     todays_date timestamp without time zone NOT NULL,
@@ -88,9 +89,9 @@ ALTER TABLE public.orders
 
     INSERT INTO orders (fname, sname, descriptions, kilogram, price, delivery_date, delivery_status, todays_date) VALUES
 ('Alvin', '1', 'konting sabon lang', '2','1', '2021-06-30', 1, '2019-06-27'),
-('Rosella', '2', 'wag masyado', '2', '2021-06-29', 1, '2019-06-27'),
-('Juvi', '3', 'wag masyado madiin', '3', '2021-06-29', 1, '2019-06-28'),
-('JM', '4', 'dahan-dahan', '4', '2021-10-01', 0, '2021-10-01');
+('Rosella', '2', 'wag masyado', '4', '2', '2021-06-29', 1, '2019-06-27'),
+('Juvi', '3', 'wag masyado madiin', '7', '3', '2021-06-29', 1, '2019-06-28'),
+('JM', '4', 'dahan-dahan','5', '4', '2021-10-01', 0, '2021-10-01');
 
     -- Table: public.services
 
