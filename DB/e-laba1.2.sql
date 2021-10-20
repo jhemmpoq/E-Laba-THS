@@ -1,4 +1,4 @@
--- Database: e-laba
+-- Database: E-Laba
 
 -- DROP DATABASE "e-laba";
     -- Table: public.admins
@@ -73,16 +73,15 @@ CREATE TABLE IF NOT EXISTS public.orders
     fname character varying(100) COLLATE pg_catalog."default" NOT NULL,
     sname character varying(200) COLLATE pg_catalog."default" NOT NULL,
     descriptions character varying(200) COLLATE pg_catalog."default" NOT NULL,
-    kilogram  double precision COLLATE pg_catalog."default",
+    kilogram  double precision,
     price character varying(50) COLLATE pg_catalog."default" NOT NULL,
-    total_price character varying(50) COLLATE pg_catalog."default" NOT NULL,
     delivery_date date NOT NULL,
     delivery_status integer NOT NULL,
     todays_date timestamp without time zone NOT NULL,
     CONSTRAINT orders_pkey PRIMARY KEY (id)
 )
 
-TABLESPACE pg_default;
+TABLESPACE pg_default;s
 
 ALTER TABLE public.orders
     OWNER to postgres;
