@@ -1,4 +1,4 @@
--- Database: e-laba
+-- Database: E-Laba
 
 -- DROP DATABASE "e-laba";
     -- Table: public.admins
